@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:meta_auction/Screens/Auth/forgot_pass.dart';
-
+import 'package:meta_auction/Screens/favorites.dart';
+import 'Screens/Auth/forgot_pass.dart';
 
 
 void main() {
@@ -15,11 +15,11 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Welcome Screen',
       theme: ThemeData(
-        primaryColor:Color.fromRGBO(91, 63, 112, 1),
+        primaryColor:Colors.blue,
 
 
       ),
-      home:ResetScreen(),
+      home:Favorites(),
     );
   }
 }
