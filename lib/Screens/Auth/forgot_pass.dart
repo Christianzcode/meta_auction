@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:meta_auction/pass_check.dart';
+import 'package:meta_auction/Screens/Auth/pass_check.dart';
 
 class ResetScreen extends StatefulWidget {
   @override

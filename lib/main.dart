@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:meta_auction/Screens/Auth/forgot_pass.dart';
 
-import 'forgot_pass.dart';
 
 
 void main() {
