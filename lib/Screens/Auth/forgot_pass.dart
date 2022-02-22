@@ -41,6 +41,7 @@ class _ResetScreenState extends State<ResetScreen> {
                       'Forgot Your Password ?',
                       style: TextStyle(
                         fontSize: 30,
+                        fontWeight: FontWeight.bold,
                         fontFamily: 'Roboto-Medium',
                       ),
                     ),
