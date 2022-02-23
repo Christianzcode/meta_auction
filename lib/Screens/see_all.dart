@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-class Favorites extends StatefulWidget {
-  const Favorites({Key? key}) : super(key: key);
+class SeeAll extends StatefulWidget {
+  const SeeAll({Key? key}) : super(key: key);
 
   @override
-  _FavoritesState createState() => _FavoritesState();
+  _SeeAllState createState() => _SeeAllState();
 }
 
-class _FavoritesState extends State<Favorites> {
+class _SeeAllState extends State<SeeAll> {
   @override
   Widget build(BuildContext context) {
     var mediaQueryHeight = MediaQuery.of(context).size.height;
@@ -18,29 +18,18 @@ class _FavoritesState extends State<Favorites> {
         resizeToAvoidBottomInset: false,
         appBar: AppBar(
           backgroundColor: Color.fromRGBO(91, 63, 112, 1),
-          title: Center(
-            child: Text(
-              'FAVORITES',
-              style: TextStyle(
-                  color: Colors.white, fontSize: 20, fontFamily: 'Roboto-Medium'),
-            ),
-          ),
         ),
         body:
-            // Column(
-            // mainAxisAlignment: MainAxisAlignment.center,
-            // children: [
-            // Padding(
-            // padding:  EdgeInsets.only(left: mediaQueryWidth*0.05,right: mediaQueryWidth*0.05),
-            // child: Text(
-            // 'Seems like you don’t have any items in your favorites list.',
-            // style: TextStyle(fontSize: 20, fontFamily: 'Roboto-Regular'),textAlign: TextAlign.center,
-            // ),
-            // )
-            // ],
-            ListView(
+        ListView(
           children: [
             SizedBox(height: mediaQueryHeight*0.05,),
+            Row(children: [
+              IconButton(onPressed: (){
+                Navigator.pop(context);
+              }, icon: Icon(Icons.arrow_back_ios_outlined,color: Color.fromRGBO(91, 63, 112, 1),),),
+            SizedBox(width:mediaQueryWidth*0.001,),
+              Text('Top selling',style: TextStyle(fontSize: 20,fontWeight:FontWeight.w500,fontFamily: 'Roboto-Medium'),)
+            ],),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
