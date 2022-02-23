@@ -1,8 +1,8 @@
 
 
-class BrandDetails {
+class Watch {
   late String brand;
-  late String year;
+  late int year;
 
   late String condition;
   late String dialcolor;
@@ -13,7 +13,7 @@ class BrandDetails {
   late DateTime date;
   late String images;
   late bool favorite;
-  BrandDetails(
+  Watch(
       {required this.brand,
         required this.year,
         required this.condition,

@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:meta_auction/model/brand_details.dart';
-import 'package:meta_auction/model/brand_details.dart';
-import 'package:meta_auction/model/brand_details.dart';
+import 'package:meta_auction/model/watch.dart';
+import 'package:meta_auction/model/watch.dart';
+import 'package:meta_auction/model/watch.dart';
 
 import 'analytics.dart';
 import 'details.dart';
 
 class TabDetails extends StatefulWidget {
+  final Watch watch;
+  TabDetails({required this.watch});
 
 
 
@@ -27,9 +29,13 @@ class TabDetailsState extends State<TabDetails> {
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
-          title: const Text('DETAILS', textAlign: TextAlign.center,
+          backgroundColor:Theme.of(context).primaryColor,
+          title:Container(
+            alignment: Alignment.center,
+            child: const  Text('DETAILS',
         style: TextStyle(fontSize: 20, fontFamily: 'Roboto-Regular',)
-        ),),
+        ),
+          ),),
 
         body: ColoredBox(
           color: Colors.white,
@@ -43,21 +49,23 @@ class TabDetailsState extends State<TabDetails> {
                 height: (MediaQuery.of(context).size.height -
                     MediaQuery.of(context).padding.top -
                     MediaQuery.of(context).padding.bottom) *
-                    0.08,
-                child: const TabBar(
-                  isScrollable: true,
-                  indicatorColor: Colors.blue,
-                  indicatorWeight: 4,
+                    0.04,
+
+                child:  TabBar(
+                  isScrollable: false,
+
+                  indicatorColor:Theme.of(context).primaryColor,
+                  indicatorWeight: 2,
                   indicatorSize: TabBarIndicatorSize.tab,
                   labelColor: Colors.black,
                   unselectedLabelColor: Colors.grey,
                   labelStyle:
-                  TextStyle(fontSize: 16, fontFamily: 'Roboto-Medium'),
-                  tabs: [
-                    Tab(
+                  const TextStyle(fontSize: 21, fontFamily: 'Roboto-Regular'),
+                  tabs: const [
+                   Tab(
                       text: 'Details',
                     ),
-                    Tab(
+                   Tab(
                       text: 'Analytics',
                     ),
 
@@ -76,7 +84,7 @@ class TabDetailsState extends State<TabDetails> {
                     // controller: forTab,
                     children: [
                       Details(
-
+                        watch: widget.watch,
                       ),
                       Analytics(
 

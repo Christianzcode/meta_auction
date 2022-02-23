@@ -1,12 +1,12 @@
-import 'package:meta_auction/model/brand_details.dart';
+import 'package:meta_auction/model/watch.dart';
 import 'package:intl/intl.dart';
 DateTime now = DateTime.now();
-String formattedDate = DateFormat('EEE d MMM kk:mm ').format(DateTime.now());
+// DateFormat formattedDate = DateFormat('EEE d MMM');
 
-List<BrandDetails> BrDetails = [
-  BrandDetails(
+List<Watch> wat = [
+  Watch(
       brand:'Rolex',
-      year:'2022',
+      year:2022,
       condition:'New',
       dialcolor:'Silver',
       metal:'Steel',
@@ -17,9 +17,9 @@ List<BrandDetails> BrDetails = [
       images: 'assets/images/watches.png',
       favorite:false ,
   ),
-    BrandDetails(
+    Watch(
         brand:'Rovina',
-        year:'2021',
+        year:2022,
         condition:'New',
         dialcolor:'Black',
         metal:'Steel',
@@ -30,9 +30,9 @@ List<BrandDetails> BrDetails = [
         images: 'assets/images/watches.png',
         favorite:true ,
     ),
-    BrandDetails(
+    Watch(
         brand:'Rolex',
-        year:'2022',
+        year:2022,
         condition:'New',
         dialcolor:'Silver',
         metal:'Steel',
@@ -43,9 +43,9 @@ List<BrandDetails> BrDetails = [
         images:'assets/images/watches.png' ,
         favorite:false ,
     ),
-    BrandDetails(
+    Watch(
         brand:'Rolex',
-        year:'2022',
+        year:2022,
         condition:'New',
         dialcolor:'Silver',
         metal:'Steel',
@@ -56,9 +56,9 @@ List<BrandDetails> BrDetails = [
         images:'assets/images/watches.png' ,
         favorite:true ,
     ),
-    BrandDetails(
+    Watch(
         brand:'Rolex',
-        year:'2022',
+        year:2022,
         condition:'New',
         dialcolor:'Silver',
         metal:'Steel',
