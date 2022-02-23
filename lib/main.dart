@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:meta_auction/Screens/favorites.dart';
-import 'Screens/Auth/forgot_pass.dart';
+import 'package:meta_auction/Screens/Auth/forgot_pass.dart';
+import 'package:meta_auction/Screens/splashScreen.dart';
+
 
 
 void main() {
@@ -19,7 +20,7 @@ class MyApp extends StatelessWidget {
 
 
       ),
-      home:ResetScreen(),
+      home:SplashScreen(),
     );
   }
 }
