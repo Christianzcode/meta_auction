@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:meta_auction/Screens/favorites.dart';
+import 'package:meta_auction/Screens/filter&sort.dart';
+import 'package:meta_auction/Screens/see_all.dart';
 import 'Screens/Auth/forgot_pass.dart';
 
 
@@ -19,7 +21,7 @@ class MyApp extends StatelessWidget {
 
 
       ),
-      home:Favorites(),
+      home:Filter(),
     );
   }
 }
