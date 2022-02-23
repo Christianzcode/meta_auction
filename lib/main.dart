@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
 
 
       ),
-      home:Favorites(),
+      home:ResetScreen(),
     );
   }
 }
