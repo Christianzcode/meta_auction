@@ -24,6 +24,7 @@ class MyApp extends StatelessWidget {
 
       ),
       home:TabDetails(watch: Watch(
+        name: 'bbb',
         brand:'Rolex',
         year:2022,
         condition:'New',

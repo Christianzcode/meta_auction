@@ -1,6 +1,7 @@
 
 
 class Watch {
+  late String name;
   late String brand;
   late int year;
 
@@ -14,7 +15,8 @@ class Watch {
   late String images;
   late bool favorite;
   Watch(
-      {required this.brand,
+      {required this.name,
+        required this.brand,
         required this.year,
         required this.condition,
         required this.dialcolor,

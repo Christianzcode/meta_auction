@@ -1,10 +1,11 @@
 import 'package:meta_auction/model/watch.dart';
 import 'package:intl/intl.dart';
-DateTime now = DateTime.now();
-// DateFormat formattedDate = DateFormat('EEE d MMM');
+
+
 
 List<Watch> wat = [
   Watch(
+      name:'aaa',
       brand:'Rolex',
       year:2022,
       condition:'New',
@@ -17,7 +18,7 @@ List<Watch> wat = [
       images: 'assets/images/watches.png',
       favorite:false ,
   ),
-    Watch(
+    Watch(name:'aaa',
         brand:'Rovina',
         year:2022,
         condition:'New',
@@ -30,7 +31,7 @@ List<Watch> wat = [
         images: 'assets/images/watches.png',
         favorite:true ,
     ),
-    Watch(
+    Watch( name:'aaa',
         brand:'Rolex',
         year:2022,
         condition:'New',
@@ -43,7 +44,7 @@ List<Watch> wat = [
         images:'assets/images/watches.png' ,
         favorite:false ,
     ),
-    Watch(
+    Watch( name:'aaa',
         brand:'Rolex',
         year:2022,
         condition:'New',
@@ -56,7 +57,7 @@ List<Watch> wat = [
         images:'assets/images/watches.png' ,
         favorite:true ,
     ),
-    Watch(
+    Watch( name:'aaa',
         brand:'Rolex',
         year:2022,
         condition:'New',
