@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:meta_auction/Screens/Auth/forgot_pass.dart';
+import 'package:meta_auction/Screens/filter&sort.dart';
 import 'package:meta_auction/Screens/splashScreen.dart';
 import 'package:meta_auction/model/watch.dart';
 
@@ -23,20 +24,7 @@ class MyApp extends StatelessWidget {
 
 
       ),
-      home:TabDetails(watch: Watch(
-        name: 'bbb',
-        brand:'Rolex',
-        year:2022,
-        condition:'New',
-        dialcolor:'Silver',
-        metal:'Steel',
-        status:'Returned',
-        lastbid:'20.000 USD',
-        country:'USA',
-        date:DateTime.now(),
-        images: 'assets/images/watches.png',
-        favorite:false ,
-      ),),
+      home: FilterAndSort(),
     );
   }
 }
