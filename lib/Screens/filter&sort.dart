@@ -210,15 +210,13 @@ class _FilterAndSortState extends State<FilterAndSort> {
                   checked=!checked;
                 });
               },
-              child: Padding(
-                padding:  EdgeInsets.only(top: mediaQueryHeight*0.05),
-                child: Container(
-                  decoration: BoxDecoration(border: Border(bottom: BorderSide(color: Colors.black,width: 0.2),),),
-                  child: Row(mainAxisAlignment: MainAxisAlignment.spaceBetween ,children: [
-                    Text('Category',style: TextStyle(fontSize: 20,fontWeight: FontWeight.w400,fontFamily: 'Roboto-Medium'),),
-                    Icon(checked? Icons.keyboard_arrow_up: Icons.keyboard_arrow_down)
-                  ],),
-                ),
+              child: Container(
+                height: mediaQueryHeight*0.08,
+                decoration: BoxDecoration(border: Border(bottom: BorderSide(color: Colors.black,width: 0.2),),),
+                child: Row(mainAxisAlignment: MainAxisAlignment.spaceBetween ,children: [
+                  Text('Category',style: TextStyle(fontSize: 20,fontWeight: FontWeight.w400,fontFamily: 'Roboto-Medium'),),
+                  Icon(checked? Icons.keyboard_arrow_up: Icons.keyboard_arrow_down)
+                ],),
               ),
             ),
             checked? Container(
@@ -278,15 +276,13 @@ class _FilterAndSortState extends State<FilterAndSort> {
                   checked1=!checked1;
                 });
               },
-              child: Padding(
-                padding: EdgeInsets.only(top: mediaQueryHeight*0.05),
-                child: Container(
-                  decoration: BoxDecoration(border: Border(bottom: BorderSide(color: Colors.black,width: 0.2),),),
-                  child: Row(mainAxisAlignment: MainAxisAlignment.spaceBetween ,children: [
-                    Text('Category',style: TextStyle(fontSize: 20,fontWeight: FontWeight.w400,fontFamily: 'Roboto-Medium'),),
-                    Icon(checked1? Icons.keyboard_arrow_up: Icons.keyboard_arrow_down)
-                  ],),
-                ),
+              child: Container(
+                height: mediaQueryHeight*0.08,
+                decoration: BoxDecoration(border: Border(bottom: BorderSide(color: Colors.black,width: 0.2),),),
+                child: Row(mainAxisAlignment: MainAxisAlignment.spaceBetween ,children: [
+                  Text('Category',style: TextStyle(fontSize: 20,fontWeight: FontWeight.w400,fontFamily: 'Roboto-Medium'),),
+                  Icon(checked1? Icons.keyboard_arrow_up: Icons.keyboard_arrow_down)
+                ],),
               ),
             ),
             checked1? Container(
