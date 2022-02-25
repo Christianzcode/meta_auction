@@ -26,75 +26,80 @@ class _PasscheckState extends State<Passcheck> {
           ),
         ),
         body: SingleChildScrollView(
-          child: Container(
-            height: mediaQueryHeight * 1,
-            child: Column(
-              children: [
-                SizedBox(
-                  height: mediaQueryWidth * 0.9,
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Text(
-                      'Check Your Email',
+          child:  GestureDetector(
+            onTap: () {
+              FocusScope.of(context).unfocus();
+            },
+            child: Container(
+              height: mediaQueryHeight * 1,
+              child: Column(
+                children: [
+                  SizedBox(
+                    height: mediaQueryWidth * 0.9,
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children:const [
+                      Text(
+                        'Check Your Email',
+                        style: TextStyle(
+                          fontSize: 30,
+                          fontFamily: 'Roboto-Medium',
+                        ),
+                      ),
+                    ],
+                  ),
+                  SizedBox(
+                    height: mediaQueryWidth * 0.04,
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(
+                        'We\'ve sent you instructions on how to reset the',
+                        style: TextStyle(
+                            fontSize: 16,
+                            fontFamily: 'Roboto-Regular',
+                            color: Colors.grey[600]),
+                      )
+                    ],
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(
+                        ' password (also check the Spam folder) ',
+                        style: TextStyle(
+                            fontSize: 16,
+                            fontFamily: 'Roboto-Regular',
+                            color: Colors.grey[600]),
+                      )
+                    ],
+                  ),
+                  SizedBox(height: mediaQueryWidth * 0.5,),
+
+                  ElevatedButton(
+                    onPressed: (){},
+                    child: const Text(
+                      'CLOSE',
                       style: TextStyle(
-                        fontSize: 30,
-                        fontFamily: 'Roboto-Medium',
+                          color: Colors.white,
+                          fontSize: 18,
+                          fontWeight: FontWeight.bold,
+                          fontFamily: 'Roboto-Medium'),
+                    ),
+                    style: ElevatedButton.styleFrom(
+                      padding: EdgeInsets.symmetric(
+                          horizontal: mediaQueryWidth * 0.30,
+                          vertical: mediaQueryHeight * 0.015),
+                      primary: Colors.purple[900],
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(40.0),
                       ),
                     ),
-                  ],
-                ),
-                SizedBox(
-                  height: mediaQueryWidth * 0.04,
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Text(
-                      'We\'ve sent you instructions on how to reset the',
-                      style: TextStyle(
-                          fontSize: 16,
-                          fontFamily: 'Roboto-Regular',
-                          color: Colors.grey[600]),
-                    )
-                  ],
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Text(
-                      ' password (also check the Spam folder) ',
-                      style: TextStyle(
-                          fontSize: 16,
-                          fontFamily: 'Roboto-Regular',
-                          color: Colors.grey[600]),
-                    )
-                  ],
-                ),
-                SizedBox(height: mediaQueryWidth * 0.5,),
-
-                ElevatedButton(
-                  onPressed: (){},
-                  child: const Text(
-                    'CLOSE',
-                    style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 18,
-                        fontWeight: FontWeight.bold,
-                        fontFamily: 'Roboto-Medium'),
                   ),
-                  style: ElevatedButton.styleFrom(
-                    padding: EdgeInsets.symmetric(
-                        horizontal: mediaQueryWidth * 0.30,
-                        vertical: mediaQueryHeight * 0.015),
-                    primary: Colors.purple[900],
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(40.0),
-                    ),
-                  ),
-                ),
-              ],
+                ],
+              ),
             ),
           ),
         ),

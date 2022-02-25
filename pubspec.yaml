@@ -32,6 +32,8 @@ dependencies:
   cupertino_icons: ^1.0.2
   form_field_validator:
   intl:
+  roundcheckbox: ^2.0.4+1
+  animated_text_kit: ^4.2.1
 
 
 
