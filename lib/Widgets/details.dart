@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:meta_auction/Fake%20Data/watch_fake.dart';
-import 'package:meta_auction/model/watch.dart';
+import 'package:meta_auction/Helpers/watch_fake.dart';
+import 'package:meta_auction/Models/watch.dart';
 
 class Details extends StatelessWidget {
   final Watch watch;
@@ -10,7 +10,7 @@ class Details extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    List<Watch> w = wat;
+    List w = wat;
     int index = 0;
     var mediaQueryHeight = MediaQuery.of(context).size.height;
     var mediaQueryWidth = MediaQuery.of(context).size.width;

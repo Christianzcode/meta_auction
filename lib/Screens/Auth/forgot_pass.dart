@@ -1,16 +1,15 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:meta_auction/Screens/Auth/pass_check.dart';
+import 'package:meta_auction/Screens/Auth/reset_password_check.dart';
 import 'package:form_field_validator/form_field_validator.dart';
 
-class ResetScreen extends StatefulWidget {
-  const ResetScreen({Key? key}) : super(key: key);
+class ForgotPassword extends StatefulWidget {
+  const ForgotPassword({Key? key}) : super(key: key);
 
   @override
-  _ResetScreenState createState() => _ResetScreenState();
+  _ForgotPasswordState createState() => _ForgotPasswordState();
 }
 
-class _ResetScreenState extends State<ResetScreen> {
+class _ForgotPasswordState extends State<ForgotPassword> {
   GlobalKey<FormState> formKey = GlobalKey<FormState>();
 
   validate() {
@@ -35,43 +34,45 @@ class _ResetScreenState extends State<ResetScreen> {
     var mediaQueryWidth = MediaQuery.of(context).size.width;
     return SafeArea(
         child: Scaffold(
+          backgroundColor: Colors.white,
           appBar: AppBar(
             title: const Text(
               'RESET PASSWORD',
               textAlign: TextAlign.center,
               style: TextStyle(fontSize: 20, fontFamily: 'Roboto-Regular'),
             ),
-            backgroundColor: Colors.purple[900],
-            leading:const  Icon(
-              Icons.arrow_back,
+            backgroundColor: Theme.of(context).primaryColor,
+            leading:  IconButton(
+              onPressed: (){
+                Navigator.pop(context);
+              },
+              icon: Icon(Icons.arrow_back),
             ),
           ),
           body: SingleChildScrollView(
             child: Padding(
               padding:const  EdgeInsets.only(left: 25.0, right: 25.0),
-              child: Container(
+              child: SizedBox(
                 height: mediaQueryHeight * 1,
                 child: Form(
                   key: formKey,
                   child: Column(
                     children: [
-                      SizedBox(
-                        height: mediaQueryWidth * 0.2,
-                      ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: const [
-                          Text(
-                            'Forgot Your Password ?',
-                            style: TextStyle(
-                              fontSize: 30,
-                              fontFamily: 'Roboto-Medium',
+                      Padding(
+                        padding:  EdgeInsets.only(top:mediaQueryWidth * 0.2, bottom: mediaQueryWidth * 0.04),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: const [
+                            Text(
+                              'Forgot Your Password ?',
+                              style: TextStyle(
+                                fontSize: 30,
+                                fontWeight: FontWeight.bold,
+                                fontFamily: 'Roboto-Medium',
+                              ),
                             ),
-                          ),
-                        ],
-                      ),
-                      SizedBox(
-                        height: mediaQueryWidth * 0.04,
+                          ],
+                        ),
                       ),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
@@ -97,85 +98,92 @@ class _ResetScreenState extends State<ResetScreen> {
                           )
                         ],
                       ),
-                      SizedBox(
-                        height: mediaQueryWidth * 0.2,
-                      ),
-                      Container(
-                        height:  mediaQueryHeight*0.075,
-                        child: TextFormField(
+                      Padding(
+                        padding:  EdgeInsets.only(top:mediaQueryWidth * 0.2,),
+                        child: SizedBox(
+                          height:  mediaQueryHeight*0.075,
+                          child: TextFormField(
 
-                          controller: emailController,
+                            controller: emailController,
 
-                          // onChanged: (value) {
-                          //   setState(() {
-                          //
-                          //   });
+                            // onChanged: (value) {
+                            //   setState(() {
+                            //
+                            //   });
 
-                          autovalidateMode: AutovalidateMode.onUserInteraction,
-                          keyboardType: TextInputType.emailAddress,
-                          decoration: InputDecoration(
+                            autovalidateMode: AutovalidateMode.onUserInteraction,
+                            keyboardType: TextInputType.emailAddress,
+                            decoration: InputDecoration(
+                              label: Text( "Email address", style: TextStyle(
+                                    fontSize: 20,
+                                    fontFamily: ' Roboto-Regular'),),
+                                // border: InputBorder.none,
+                                // errorBorder: InputBorder.none,
+                                // focusedBorder: InputBorder.none,
+                                // contentPadding: const EdgeInsets.only(
+                                //     left: 5, right: 2, bottom: 15, top: 40),)
+                              //enabledBorder:  const OutlineInputBorder(
+                                  //borderRadius: BorderRadius.all(Radius.circular(10)),
+                                  // borderSide:
+                                  // BorderSide(width: 0.2, color: Colors.grey)
+                              //),
+                              // suffixIcon: IconButton(
+                              //   icon: Icon(
+                              //     Icons.close,
+                              //     color: Theme.of(context).primaryColor,
+                              //     size: 15,
+                              //   ),
+                              //   onPressed: () {
+                              //     emailController.clear();
+                              //   },
+                              //),
 
-                            enabledBorder:  const OutlineInputBorder(
-                                borderRadius: BorderRadius.all(Radius.circular(10)),
-                                borderSide:
-                                BorderSide(width: 0.2, color: Colors.grey)),
-                            suffixIcon: IconButton(
-                              icon: Icon(
-                                Icons.close,
-                                color: Colors.purple[900],
-                                size: 15,
-                              ),
-                              onPressed: () {
-                                emailController.clear();
-                              },
+                              // hintText: "Email address",
+                              // hintStyle: TextStyle(
+                              //     color: Colors.grey[500],
+                              //     fontSize: 17,
+                              //     fontFamily: ' Roboto-Regular'),
+                              // border: InputBorder.none,
+                              // errorBorder: InputBorder.none,
+                              // focusedBorder: InputBorder.none,
+                              // contentPadding: const EdgeInsets.only(
+                              //     left: 5, right: 2, bottom: 15, top: 40),
                             ),
-
-                            hintText: "Email address",
-                            hintStyle: TextStyle(
-                                color: Colors.grey[500],
-                                fontSize: 17,
-                                fontFamily: ' Roboto-Regular'),
-                            border: InputBorder.none,
-                            errorBorder: InputBorder.none,
-                            focusedBorder: InputBorder.none,
-                            contentPadding: const EdgeInsets.only(
-                                left: 5, right: 2, bottom: 15, top: 40),
+                            // autofillHints: const [AutofillHints.email],
+                            validator: MultiValidator([
+                              RequiredValidator(errorText: 'Required *'),
+                              EmailValidator(errorText: 'Not a valid email'),
+                            ]),
                           ),
-                          // autofillHints: const [AutofillHints.email],
-                          validator: MultiValidator([
-                            RequiredValidator(errorText: 'Required *'),
-                            EmailValidator(errorText: 'Not a valid email'),
-                          ]),
                         ),
                       ),
-                      SizedBox(
-                        height: mediaQueryWidth * 0.65,
-                      ),
-                      ElevatedButton(
-                        onPressed: () {
-                          if (!formKey.currentState!.validate()==false ){
-                            // return;
-                          } else {
-                            Navigator.of(context).push(
-                                MaterialPageRoute(
-                                    builder: (context) => Passcheck()));
-                          }
-                        },
-                        child: const Text(
-                          'RECOVER PASSWORD',
-                          style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 18,
-                              fontWeight: FontWeight.bold,
-                              fontFamily: 'Roboto-Medium'),
-                        ),
-                        style: ElevatedButton.styleFrom(
-                          padding: EdgeInsets.symmetric(
-                              horizontal: mediaQueryWidth * 0.15,
-                              vertical: mediaQueryHeight * 0.015),
-                          primary: Colors.purple[900],
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(40.0),
+                      Padding(
+                        padding: EdgeInsets.only(top:mediaQueryWidth * 0.6),
+                        child: ElevatedButton(
+                          onPressed: () {
+                            if (!formKey.currentState!.validate()==false ){
+                              // return;
+                            } else {
+                              Navigator.pushNamed(context, 'ResetPasswordCheck');
+
+                            }
+                          },
+                          child: const Text(
+                            'RECOVER PASSWORD',
+                            style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 18,
+                                fontWeight: FontWeight.bold,
+                                fontFamily: 'Roboto-Medium'),
+                          ),
+                          style: ElevatedButton.styleFrom(
+                            padding: EdgeInsets.symmetric(
+                                horizontal: mediaQueryWidth * 0.1,
+                                vertical: mediaQueryHeight * 0.015),
+                            primary: Theme.of(context).primaryColor,
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(40.0),
+                            ),
                           ),
                         ),
                       ),

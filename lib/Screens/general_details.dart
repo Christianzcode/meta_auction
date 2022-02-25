@@ -1,23 +1,23 @@
 import 'package:flutter/material.dart';
-import 'package:meta_auction/model/watch.dart';
-import 'package:meta_auction/model/watch.dart';
-import 'package:meta_auction/model/watch.dart';
+import 'package:meta_auction/Models/watch.dart';
+import 'package:meta_auction/Widgets/analytics.dart';
+import 'package:meta_auction/Widgets/details.dart';
 
-import 'analytics.dart';
-import 'details.dart';
 
-class TabDetails extends StatefulWidget {
+
+
+class GeneralDetails extends StatefulWidget {
   final Watch watch;
-  TabDetails({required this.watch});
+  GeneralDetails({required this.watch});
 
 
 
 
   @override
-  TabDetailsState createState() => TabDetailsState();
+  GeneralDetailsState createState() => GeneralDetailsState();
 }
 
-class TabDetailsState extends State<TabDetails> {
+class GeneralDetailsState extends State<GeneralDetails> {
   var firstField = TextEditingController();
   var thirdField = TextEditingController();
   var secondField = TextEditingController();

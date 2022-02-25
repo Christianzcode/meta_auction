@@ -1,27 +1,26 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:meta_auction/Screens/Auth/logIn.dart';
 
-class Passcheck extends StatefulWidget {
+class ResetPasswordCheck extends StatefulWidget {
   @override
-  _PasscheckState createState() => _PasscheckState();
+  _ResetPasswordCheckState createState() => _ResetPasswordCheckState();
 }
 
-class _PasscheckState extends State<Passcheck> {
+class _ResetPasswordCheckState extends State<ResetPasswordCheck> {
   @override
   Widget build(BuildContext context) {
-    var _textEditingController = TextEditingController();
     var mediaQueryHeight = MediaQuery.of(context).size.height;
     var mediaQueryWidth = MediaQuery.of(context).size.width;
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
-          title: Text(
+          title: const Text(
             'RESET PASSWORD',
             textAlign: TextAlign.center,
-            style: TextStyle(fontSize: 20, fontFamily: 'Roboto-Regular'),
+            style:  TextStyle(fontSize: 20, fontFamily: 'Roboto-Regular'),
           ),
           backgroundColor: Colors.purple[900],
-          leading: Icon(
+          leading: const Icon(
             Icons.arrow_back,
           ),
         ),
@@ -30,7 +29,7 @@ class _PasscheckState extends State<Passcheck> {
             onTap: () {
               FocusScope.of(context).unfocus();
             },
-            child: Container(
+            child: SizedBox(
               height: mediaQueryHeight * 1,
               child: Column(
                 children: [
@@ -79,7 +78,9 @@ class _PasscheckState extends State<Passcheck> {
                   SizedBox(height: mediaQueryWidth * 0.5,),
 
                   ElevatedButton(
-                    onPressed: (){},
+                    onPressed: (){
+                      Navigator.pop(context);
+                    },
                     child: const Text(
                       'CLOSE',
                       style: TextStyle(

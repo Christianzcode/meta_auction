@@ -1,21 +1,51 @@
 import 'package:flutter/material.dart';
-import 'package:meta_auction/Screens/Auth/sign_up.dart';
-import 'package:meta_auction/Screens/Home.dart';
-
+import 'package:meta_auction/Screens/Auth/forgot_pass.dart';
+import 'package:form_field_validator/form_field_validator.dart';
 
 class LogIn extends StatefulWidget {
-
-
   @override
   _LogInState createState() => _LogInState();
 }
 
 class _LogInState extends State<LogIn> {
-  final email = TextEditingController();
-  final password = TextEditingController();
+  GlobalKey<FormState> formkey = GlobalKey<FormState>();
+  String? password = '', confirmPassword = '', email = '';
+  bool validate() {
+    if (formkey.currentState != null) {
+      if (formkey.currentState!.validate()) {
+        if (password == confirmPassword) {
+          // ignore: avoid_print
+
+          print('Validated');
+          return true;
+        }
+      } else {
+        // ignore: avoid_print
+        print('Not validated');
+        return false;
+      }
+    }
+    return false;
+  }
+
+  String? validatePass(value) {
+    if (value.trim().isEmpty) {
+      return "Required";
+    }
+    // if (value.trim().length < 6) {
+    //   return "this field should be at least 6 character";
+    // }
+    // if (!RegExp(r"[A-Z]").hasMatch(value) == true ||
+    //     !RegExp(r"[a-z]").hasMatch(value) == true) {
+    //   return "Must have Upper,LowerCase";
+    // }
+    return null;
+  }
+
+  final emailController = TextEditingController();
+  final passwordController = TextEditingController();
 
   bool _isObscure = true;
-  bool _isChecked = false;
 
   @override
   Widget build(BuildContext context) {
@@ -23,183 +53,176 @@ class _LogInState extends State<LogIn> {
     var mediaQueryWidth = MediaQuery.of(context).size.width;
     return SafeArea(
       child: Scaffold(
-        appBar: AppBar(toolbarHeight: mediaQueryHeight * 0.10,  title: Center( child: Text("LOG IN  ", style: TextStyle( fontWeight: FontWeight.bold,fontSize: 20),textAlign: TextAlign.center),),backgroundColor:Color.fromRGBO(91, 63, 112, 1),),
+          appBar: AppBar(
+            title: const Center(
+              child: Text("LOG IN  ",
+                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+                  textAlign: TextAlign.center),
+            ),
+            backgroundColor: const Color.fromRGBO(91, 63, 112, 1),
+          ),
           backgroundColor: Colors.white,
           body: SingleChildScrollView(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                SizedBox(
-                  height: mediaQueryHeight * 0.01,
-                ),
-                SizedBox(
-                  height: mediaQueryHeight * 0.38,
-                  width: mediaQueryWidth,
-                  child: Stack(children: [
-                    SizedBox(
-                      height: mediaQueryHeight * 0.8,
-                        width: mediaQueryWidth,
-                        child: Image.asset(
-                            'assets/images/logo.png',
-                            )),
-
-
-                  ]),
-                ),
-                SizedBox(
-                  height: mediaQueryHeight * 0.005,
-                ),
-
-                Padding(
+            child:  Form(
+              key: formkey,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Padding(
+                    padding: EdgeInsets.only(top:mediaQueryHeight * 0.01),
+                    child: SizedBox(
+                      height: mediaQueryHeight * 0.38,
+                      width: mediaQueryWidth,
+                            child: Image.asset(
+                              'assets/images/logo.png',)
+                    ),
+                  ),
+                  Padding(
                     padding: EdgeInsets.only(
+                      top: mediaQueryHeight * 0.005,
                         bottom: mediaQueryHeight * 0.02,
-                        right:mediaQueryHeight * 0.05 ,
+                        right: mediaQueryHeight * 0.05,
                         left: mediaQueryWidth * 0.05),
-                  child: TextFormField(
-                    decoration: const InputDecoration(
-                      border: UnderlineInputBorder(),
+                    child: TextFormField(
+                      validator: MultiValidator([
+                        RequiredValidator(errorText: 'Required *'),
+                        // EmailValidator(errorText: 'Not a valid email'),
+                      ]),
+                      onSaved: (value) => email = value,
+                      autovalidateMode:
+                      AutovalidateMode.onUserInteraction,
+                      decoration: const InputDecoration(
+                        border: UnderlineInputBorder(),
                         label: Text.rich(
-                          TextSpan(
-                            children: <InlineSpan>[
-                          WidgetSpan(
-                          child: Text(
-                            'Username or email',
-                            style: TextStyle(fontFamily: 'Roboto-Regular'),
-                          ),
+                          TextSpan(children: <InlineSpan>[
+                            WidgetSpan(
+                              child: Text(
+                                'Username or email',
+                                style: TextStyle(fontFamily: 'Roboto-Regular'),
+                              ),
+                            ),
+                          ]),
                         ),
-                      ]
-                    ),
-
-                  ),
                         prefixIcon: Icon(Icons.email_outlined),
-                    ),
-                  ),
-                ),
-                SizedBox(
-                  height: mediaQueryHeight * 0.03,
-                ),
-
-
-                Padding(
-                  padding:  EdgeInsets.only(
-                    bottom: mediaQueryHeight * 0.02,
-                    right:mediaQueryHeight * 0.05 ,
-                    left: mediaQueryWidth * 0.05),
-
-                  child: TextFormField(
-
-
-                    obscureText: _isObscure,
-                    controller: password,
-                    autovalidateMode: AutovalidateMode.onUserInteraction,
-                    decoration: InputDecoration(
-                      border: UnderlineInputBorder(),
-                        label: Text.rich(
-                          TextSpan(
-                              children: <InlineSpan>[
-                                WidgetSpan(
-                                  child: Text(
-                                    'Password',
-                                    style: TextStyle(fontFamily: 'Roboto-Regular'),
-                                  ),
-                                ),
-                              ]
-                          ),
-
-                        ),
-                      prefixIcon: Icon(Icons.lock_outline),
-                      suffixIcon: IconButton(
-                        icon: const Icon(
-                          Icons.remove_red_eye,
-                          color: Colors.black,
-                        ),
-                        onPressed: () {
-                          setState(() {
-                            _isObscure = !_isObscure;
-                          });
-                        },
                       ),
-
-
-                      filled: true,
-                      fillColor: Colors.white,
-
                     ),
                   ),
-                ),
-
-
-                Padding(
-                  padding:
-                  EdgeInsets.symmetric(horizontal: mediaQueryWidth * 0.07),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.end,
+                  Padding(
+                    padding: EdgeInsets.only(
+                      top:mediaQueryHeight * 0.03,
+                        bottom: mediaQueryHeight * 0.02,
+                        right: mediaQueryHeight * 0.05,
+                        left: mediaQueryWidth * 0.05),
+                    child: TextFormField(
+                      autovalidateMode:
+                      AutovalidateMode.onUserInteraction,
+                      onChanged: (value) => password = value,
+                      validator: validatePass,
+                      obscureText: _isObscure,
+                      controller: passwordController,
+                      decoration: InputDecoration(
+                        border: const UnderlineInputBorder(),
+                        label: const Text.rich(
+                          TextSpan(children: <InlineSpan>[
+                            WidgetSpan(
+                              child: Text(
+                                'Password',
+                                style: TextStyle(fontFamily: 'Roboto-Regular'),
+                              ),
+                            ),
+                          ]),
+                        ),
+                        prefixIcon: const Icon(Icons.lock_outline),
+                        suffixIcon: IconButton(
+                          icon: const Icon(
+                            Icons.remove_red_eye,
+                            color: Colors.black,
+                          ),
+                          onPressed: () {
+                            setState(() {
+                              _isObscure = !_isObscure;
+                            });
+                          },
+                        ),
+                        filled: true,
+                        fillColor: Colors.white,
+                      ),
+                    ),
+                  ),
+                  Padding(
+                    padding:
+                        EdgeInsets.symmetric(horizontal: mediaQueryWidth * 0.07, vertical: mediaQueryHeight * 0.02,),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.end,
+                      children: [
+                        TextButton(
+                            onPressed: () {
+                              Navigator.of(context).push(MaterialPageRoute(
+                                  builder: (context) => const ForgotPassword()));
+                            },
+                            child: const Text(
+                              "Forgot password?",
+                              style: TextStyle(
+                                  fontSize: 15,
+                                  fontFamily: 'Roboto-Regular',
+                                  color: Colors.grey),
+                            ))
+                      ],
+                    ),
+                  ),
+                  Padding(
+                    padding: EdgeInsets.only(top: mediaQueryHeight * 0.02,),
+                    child: ElevatedButton(
+                      onPressed: () {
+                        if (!formkey.currentState!.validate()) {
+                          // return;
+                        }
+                        else {
+                        Navigator.pushNamedAndRemoveUntil(
+                            context, 'HomePage', (Route<dynamic> route) => false);}
+                      },
+                      child: const Text(
+                        ' LOG IN ',
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 18,
+                            fontWeight: FontWeight.bold,
+                            fontFamily: 'Roboto-Bold'),
+                      ),
+                      style: ElevatedButton.styleFrom(
+                        padding: EdgeInsets.symmetric(
+                            horizontal: mediaQueryWidth * 0.25,
+                            vertical: mediaQueryHeight * 0.020),
+                        primary: const Color.fromRGBO(91, 63, 112, 1),
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(40.0),
+                        ),
+                      ),
+                    ),
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-
+                      const Text(
+                        'Don t have an account ?',
+                        style: TextStyle(color: Colors.black45),
+                      ),
                       TextButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.pushNamed(context, 'SignUp');
+                          },
                           child: const Text(
-                            "Forgot password?",
+                            "REGISTER",
                             style: TextStyle(
-
-                                fontSize: 15,
-                                fontFamily: 'Roboto-Regular',
-                              color: Colors.grey
-                                ),
-                          ))
+                              fontSize: 15,
+                              fontFamily: 'Roboto-Regular',
+                              color: Color.fromRGBO(91, 63, 112, 1),
+                            ),
+                          )),
                     ],
                   ),
-                ),
-                SizedBox(
-                  height: mediaQueryHeight * 0.02,
-                ),
-                ElevatedButton(
-                  onPressed: () {
-                    Navigator.of(context).pushReplacement(MaterialPageRoute(
-                        builder: (context) => HomePage()));
-                  },
-                  child: const Text(
-                    ' LOG IN ',
-                    style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 18,
-                        fontWeight: FontWeight.bold,
-                        fontFamily: 'Roboto-Bold'),
-                  ),
-                  style: ElevatedButton.styleFrom(
-                    padding: EdgeInsets.symmetric(
-                        horizontal: mediaQueryWidth * 0.25,
-                        vertical: mediaQueryHeight * 0.020),
-                    primary: const Color.fromRGBO(91, 63, 112, 1),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(40.0),
-                    ),
-                  ),
-                ),
-                Row(mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-
-                    Container(child: Text('Don t have an account ?', style: TextStyle(color: Colors.black45),),),
-                    Container(child:   TextButton(
-                        onPressed: () {
-                          Navigator.of(context).pushReplacement(MaterialPageRoute(
-                              builder: (context) => Signup()));
-
-                        },
-                        child: const Text(
-                          "REGISTER",
-                          style: TextStyle(
-
-                            fontSize: 15,
-                            fontFamily: 'Roboto-Regular',
-                            color: const Color.fromRGBO(91, 63, 112, 1),
-                          ),
-                        )),),
-                  ],
-                ),
-
-
-              ],
+                ],
+              ),
             ),
           )),
     );

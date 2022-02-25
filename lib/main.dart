@@ -1,9 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:meta_auction/Screens/Settings/change_password.dart';
+import 'package:meta_auction/Screens/Settings/settings.dart';
 import 'package:meta_auction/Screens/Auth/forgot_pass.dart';
+import 'package:meta_auction/Screens/Auth/logIn.dart';
+import 'package:meta_auction/Screens/Auth/reset_password_check.dart';
+import 'package:meta_auction/Screens/Auth/sign_up.dart';
+import 'package:meta_auction/Screens/favorites.dart';
+import 'package:meta_auction/Screens/filter&sort.dart';
+import 'package:meta_auction/Screens/home_page.dart';
+import 'package:meta_auction/Screens/see_all.dart';
 import 'package:meta_auction/Screens/splashScreen.dart';
-import 'package:meta_auction/model/watch.dart';
 
-import 'Tab Bar/tab_bar.dart';
 
 
 
@@ -19,25 +26,23 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Welcome Screen',
       theme: ThemeData(
-        primaryColor:Color.fromRGBO(91, 63, 112, 1),
-
-
+        primaryColor:const Color.fromRGBO(91, 63, 112, 1),
       ),
-      home: SplashScreen()
-      //
-      // TabDetails(watch: Watch(
-      //   brand:'Rolex',
-      //   year:2022,
-      //   condition:'New',
-      //   dialcolor:'Silver',
-      //   metal:'Steel',
-      //   status:'Returned',
-      //   lastbid:'20.000 USD',
-      //   country:'USA',
-      //   date:DateTime.now(),
-      //   images: 'assets/images/watches.png',
-      //   favorite:false ,
-      // ),),
+      initialRoute: 'SplashScreen',
+      routes: {
+        'SplashScreen': (context) =>  SplashScreen(),
+        'LogIn': (context) =>  LogIn(),
+        'SignUp': (context) =>  SignUp(),
+        'ForgotPassword': (context) =>  ForgotPassword(),
+        'ResetPasswordCheck': (context) =>  ResetPasswordCheck(),
+        'HomePage': (context) =>  HomePage(),
+        'Settings': (context) =>  Settings(),
+        'ChangePassword': (context) =>  ChangePassword(),
+        'ResetPasswordCheck': (context) =>  ResetPasswordCheck(),
+        'Filter': (context) =>  FilterAndSort(),
+        'SeeAll': (context) =>  SeeAll(),
+        'Favorites': (context) =>  Favorites(),
+      },
     );
   }
 }

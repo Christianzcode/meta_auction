@@ -4,28 +4,27 @@ class Watch {
   late String name;
   late String brand;
   late int year;
-
   late String condition;
-  late String dialcolor;
+  late String dialColor;
   late String metal;
   late String status;
-  late String lastbid;
+  late String lastBid;
   late String country;
   late DateTime date;
-  late String images;
+  late String image;
   late bool favorite;
   Watch(
       {required this.name,
         required this.brand,
         required this.year,
         required this.condition,
-        required this.dialcolor,
+        required this.dialColor,
         required this.metal,
         required this.status,
-        required this.lastbid,
+        required this.lastBid,
         required this.country,
         required this.date,
-        required this.images,
+        required this.image,
         required this.favorite,
         });
 }

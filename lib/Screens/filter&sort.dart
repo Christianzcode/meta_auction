@@ -1,6 +1,5 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:meta_auction/model/filter.dart';
+import 'package:meta_auction/Models/filter.dart';
 
 class FilterAndSort extends StatefulWidget {
   const FilterAndSort({Key? key}) : super(key: key);
