@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:meta_auction/Screens/Auth/sign_up.dart';
+import 'package:meta_auction/Screens/Home.dart';
 
 
 class LogIn extends StatefulWidget {
@@ -153,7 +155,8 @@ class _LogInState extends State<LogIn> {
                 ),
                 ElevatedButton(
                   onPressed: () {
-                    ;
+                    Navigator.of(context).pushReplacement(MaterialPageRoute(
+                        builder: (context) => HomePage()));
                   },
                   child: const Text(
                     ' LOG IN ',
@@ -173,6 +176,29 @@ class _LogInState extends State<LogIn> {
                     ),
                   ),
                 ),
+                Row(mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+
+                    Container(child: Text('Don t have an account ?', style: TextStyle(color: Colors.black45),),),
+                    Container(child:   TextButton(
+                        onPressed: () {
+                          Navigator.of(context).pushReplacement(MaterialPageRoute(
+                              builder: (context) => Signup()));
+
+                        },
+                        child: const Text(
+                          "REGISTER",
+                          style: TextStyle(
+
+                            fontSize: 15,
+                            fontFamily: 'Roboto-Regular',
+                            color: const Color.fromRGBO(91, 63, 112, 1),
+                          ),
+                        )),),
+                  ],
+                ),
+
+
               ],
             ),
           )),

@@ -23,19 +23,21 @@ class MyApp extends StatelessWidget {
 
 
       ),
-      home:TabDetails(watch: Watch(
-        brand:'Rolex',
-        year:2022,
-        condition:'New',
-        dialcolor:'Silver',
-        metal:'Steel',
-        status:'Returned',
-        lastbid:'20.000 USD',
-        country:'USA',
-        date:DateTime.now(),
-        images: 'assets/images/watches.png',
-        favorite:false ,
-      ),),
+      home: SplashScreen()
+      //
+      // TabDetails(watch: Watch(
+      //   brand:'Rolex',
+      //   year:2022,
+      //   condition:'New',
+      //   dialcolor:'Silver',
+      //   metal:'Steel',
+      //   status:'Returned',
+      //   lastbid:'20.000 USD',
+      //   country:'USA',
+      //   date:DateTime.now(),
+      //   images: 'assets/images/watches.png',
+      //   favorite:false ,
+      // ),),
     );
   }
 }

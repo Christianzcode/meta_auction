@@ -142,10 +142,10 @@ class _ResetScreenState extends State<ResetScreen> {
                             left: 5, right: 2, bottom: 15, top: 40),
                       ),
                       // autofillHints: const [AutofillHints.email],
-                      validator: MultiValidator([
-                        RequiredValidator(errorText: 'Required *'),
-                        EmailValidator(errorText: 'Not a valid email'),
-                      ]),
+                      // validator: MultiValidator([
+                      //   RequiredValidator(errorText: 'Required *'),
+                      //   EmailValidator(errorText: 'Not a valid email'),
+                      // ]),
                     ),
                   ),
                   SizedBox(

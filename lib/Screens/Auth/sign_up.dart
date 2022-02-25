@@ -1,4 +1,5 @@
 import'package:flutter/material.dart';
+import 'package:meta_auction/Screens/Home.dart';
 
 
 
@@ -22,10 +23,12 @@ class _SignupState extends State<Signup> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-
+                SizedBox(
+                  height: mediaQueryHeight * 0.05,
+                ),
 Container(child: Text('Create Your Account', style: TextStyle(fontSize: 30, ),),),
                 SizedBox(
-                  height: mediaQueryHeight * 0.005,
+                  height: mediaQueryHeight * 0.05,
                 ),
 
                 Padding(
@@ -54,7 +57,7 @@ Container(child: Text('Create Your Account', style: TextStyle(fontSize: 30, ),),
                   ),
                 ),
                 SizedBox(
-                  height: mediaQueryHeight * 0.03,
+                  height: mediaQueryHeight * 0.007,
                 ),
                 Padding(
                   padding: EdgeInsets.only(
@@ -145,6 +148,8 @@ Container(child: Text('Create Your Account', style: TextStyle(fontSize: 30, ),),
                 ),
                 ElevatedButton(
                   onPressed: () {
+                    Navigator.of(context).pushReplacement(MaterialPageRoute(
+                          builder: (context) =>  HomePage()))
                     ;
                   },
                   child: const Text(
@@ -164,6 +169,24 @@ Container(child: Text('Create Your Account', style: TextStyle(fontSize: 30, ),),
                       borderRadius: BorderRadius.circular(40.0),
                     ),
                   ),
+                ),
+
+                Row(mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+
+                    Container(child: Text('Already have an account ?', style: TextStyle(color: Colors.black45),),),
+                    Container(child:   TextButton(
+                        onPressed: () {},
+                        child: const Text(
+                          "SIGN IN",
+                          style: TextStyle(
+
+                            fontSize: 15,
+                            fontFamily: 'Roboto-Regular',
+                            color: const Color.fromRGBO(91, 63, 112, 1),
+                          ),
+                        )),),
+                  ],
                 ),
               ],
             ),

@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:meta_auction/Fake%20Data/brand_details.dart';
+import 'package:meta_auction/Fake%20Data/watch_fake.dart';
 import 'package:meta_auction/model/watch.dart';
 
 
