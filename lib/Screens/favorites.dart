@@ -17,8 +17,8 @@ class _FavoritesState extends State<Favorites> {
         backgroundColor: Colors.white,
         resizeToAvoidBottomInset: false,
         appBar: AppBar(
-          backgroundColor: Color.fromRGBO(91, 63, 112, 1),
-          title: Center(
+          backgroundColor: const Color.fromRGBO(91, 63, 112, 1),
+          title: const Center(
             child: Text(
               'FAVORITES',
               style: TextStyle(
