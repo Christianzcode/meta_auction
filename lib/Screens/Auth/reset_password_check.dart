@@ -17,15 +17,15 @@ class _ResetPasswordCheckState extends State<ResetPasswordCheck> {
           title: const Text(
             'RESET PASSWORD',
             textAlign: TextAlign.center,
-            style:  TextStyle(fontSize: 20, fontFamily: 'Roboto-Regular'),
+            style: TextStyle(fontSize: 20, fontFamily: 'Roboto-Regular'),
           ),
-          backgroundColor: Colors.purple[900],
+          backgroundColor: Theme.of(context).primaryColor,
           leading: const Icon(
             Icons.arrow_back,
           ),
         ),
         body: SingleChildScrollView(
-          child:  GestureDetector(
+          child: GestureDetector(
             onTap: () {
               FocusScope.of(context).unfocus();
             },
@@ -33,35 +33,35 @@ class _ResetPasswordCheckState extends State<ResetPasswordCheck> {
               height: mediaQueryHeight * 1,
               child: Column(
                 children: [
-                  SizedBox(
-                    height: mediaQueryWidth * 0.9,
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children:const [
-                      Text(
-                        'Check Your Email',
-                        style: TextStyle(
-                          fontSize: 30,
-                          fontFamily: 'Roboto-Medium',
+                  Padding(
+                    padding: EdgeInsets.only(top:mediaQueryWidth * 0.9,),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: const [
+                        Text(
+                          'Check Your Email',
+                          style: TextStyle(
+                            fontSize: 30,
+                            fontFamily: 'Roboto-Medium',
+                          ),
                         ),
-                      ),
-                    ],
+                      ],
+                    ),
                   ),
-                  SizedBox(
-                    height: mediaQueryWidth * 0.04,
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Text(
-                        'We\'ve sent you instructions on how to reset the',
-                        style: TextStyle(
-                            fontSize: 16,
-                            fontFamily: 'Roboto-Regular',
-                            color: Colors.grey[600]),
-                      )
-                    ],
+                  Padding(
+                    padding: EdgeInsets.only(top:mediaQueryWidth * 0.04,),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(
+                          'We\'ve sent you instructions on how to reset the',
+                          style: TextStyle(
+                              fontSize: 16,
+                              fontFamily: 'Roboto-Regular',
+                              color: Colors.grey[600]),
+                        )
+                      ],
+                    ),
                   ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
@@ -75,27 +75,28 @@ class _ResetPasswordCheckState extends State<ResetPasswordCheck> {
                       )
                     ],
                   ),
-                  SizedBox(height: mediaQueryWidth * 0.5,),
-
-                  ElevatedButton(
-                    onPressed: (){
-                      Navigator.pop(context);
-                    },
-                    child: const Text(
-                      'CLOSE',
-                      style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 18,
-                          fontWeight: FontWeight.bold,
-                          fontFamily: 'Roboto-Medium'),
-                    ),
-                    style: ElevatedButton.styleFrom(
-                      padding: EdgeInsets.symmetric(
-                          horizontal: mediaQueryWidth * 0.30,
-                          vertical: mediaQueryHeight * 0.015),
-                      primary: Colors.purple[900],
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(40.0),
+                  Padding(
+                    padding: EdgeInsets.only(top: mediaQueryWidth * 0.5),
+                    child: ElevatedButton(
+                      onPressed: () {
+                        Navigator.pop(context);
+                      },
+                      child: const Text(
+                        'CLOSE',
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 18,
+                            fontWeight: FontWeight.bold,
+                            fontFamily: 'Roboto-Medium'),
+                      ),
+                      style: ElevatedButton.styleFrom(
+                        padding: EdgeInsets.symmetric(
+                            horizontal: mediaQueryWidth * 0.30,
+                            vertical: mediaQueryHeight * 0.015),
+                        primary: Theme.of(context).primaryColor,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(40.0),
+                        ),
                       ),
                     ),
                   ),

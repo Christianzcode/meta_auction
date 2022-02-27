@@ -46,7 +46,7 @@ class _ForgotPasswordState extends State<ForgotPassword> {
               onPressed: (){
                 Navigator.pop(context);
               },
-              icon: Icon(Icons.arrow_back),
+              icon: const Icon(Icons.arrow_back),
             ),
           ),
           body: SingleChildScrollView(
@@ -113,7 +113,7 @@ class _ForgotPasswordState extends State<ForgotPassword> {
 
                             autovalidateMode: AutovalidateMode.onUserInteraction,
                             keyboardType: TextInputType.emailAddress,
-                            decoration: InputDecoration(
+                            decoration: const InputDecoration(
                               label: Text( "Email address", style: TextStyle(
                                     fontSize: 20,
                                     fontFamily: ' Roboto-Regular'),),

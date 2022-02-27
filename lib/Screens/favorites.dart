@@ -17,12 +17,14 @@ class _FavoritesState extends State<Favorites> {
         backgroundColor: Colors.white,
         resizeToAvoidBottomInset: false,
         appBar: AppBar(
-          backgroundColor: const Color.fromRGBO(91, 63, 112, 1),
+          backgroundColor: Theme.of(context).primaryColor,
           title: const Center(
             child: Text(
               'FAVORITES',
               style: TextStyle(
-                  color: Colors.white, fontSize: 20, fontFamily: 'Roboto-Medium'),
+                  color: Colors.white,
+                  fontSize: 20,
+                  fontFamily: 'Roboto-Medium'),
             ),
           ),
         ),
@@ -40,123 +42,196 @@ class _FavoritesState extends State<Favorites> {
             // ],
             ListView(
           children: [
-            SizedBox(height: mediaQueryHeight*0.05,),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Column(
-                  children: [
-                    Container(
-                      width: mediaQueryWidth * 0.4,
-                      height: mediaQueryHeight * 0.16,
-                      child: Image.asset('assets/images/NoPath - Copy (15).png'),
-                    ),
-                    SizedBox(height: mediaQueryHeight*0.005,),
-                    Text('Lorem ipsum',style: TextStyle(fontSize: 14,fontFamily: 'Roboto-Regular'),)
-                  ],
-                ),
-                SizedBox(width: mediaQueryWidth*0.01,),
-                Column(
-                  children: [
-                    Container(
-                      width: mediaQueryWidth * 0.4,
-                      height: mediaQueryHeight * 0.16,
-                      child: Image.asset('assets/images/NoPath - Copy (16).png'),
-                    ),
-                    SizedBox(height: mediaQueryHeight*0.005,),
-                    Text('Lorem ipsum',style: TextStyle(fontSize: 14,fontFamily: 'Roboto-Regular'),),
-                  ],
-                ),
-              ],
+            Padding(
+              padding: EdgeInsets.only(
+                top: mediaQueryHeight * 0.05,
+              ),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Column(
+                    children: [
+                      SizedBox(
+                        width: mediaQueryWidth * 0.4,
+                        height: mediaQueryHeight * 0.16,
+                        child:
+                        Image.asset('assets/images/watch.png'),
+                      ),
+                      Padding(
+                        padding: EdgeInsets.only(top: mediaQueryHeight * 0.005),
+                        child: const Text(
+                          'Lorem ipsum',
+                          style: TextStyle(
+                              fontSize: 14, fontFamily: 'Roboto-Regular'),
+                        ),
+                      )
+                    ],
+                  ),
+                  SizedBox(
+                    width: mediaQueryWidth * 0.01,
+                  ),
+                  Column(
+                    children: [
+                      SizedBox(
+                        width: mediaQueryWidth * 0.4,
+                        height: mediaQueryHeight * 0.16,
+                        child:
+                        Image.asset('assets/images/watch.png'),
+                      ),
+                      Padding(
+                        padding: EdgeInsets.only(top:mediaQueryHeight * 0.005),
+                        child: const Text(
+                          'Lorem ipsum',
+                          style: TextStyle(
+                              fontSize: 14, fontFamily: 'Roboto-Regular'),
+                        ),
+                      ),
+                    ],
+                  ),
+                ],
+              ),
             ),
-            SizedBox(height: mediaQueryHeight*0.05,),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Column(
-                  children: [
-                    Container(
-                      width: mediaQueryWidth * 0.4,
-                      height: mediaQueryHeight * 0.16,
-                      child: Image.asset('assets/images/NoPath - Copy (26).png'),
-                    ),
-                    SizedBox(height: mediaQueryHeight*0.005,),
-                    Text('Lorem ipsum',style: TextStyle(fontSize: 14,fontFamily: 'Roboto-Regular'),),
-                  ],
-                ),
-                SizedBox(width: mediaQueryWidth*0.01,),
-                Column(
-                  children: [
-                    Container(
-                      width: mediaQueryWidth * 0.4,
-                      height: mediaQueryHeight * 0.16,
-                      child: Image.asset('assets/images/NoPath - Copy (27).png'),
-                    ),
-                    SizedBox(height: mediaQueryHeight*0.005,),
-                    Text('Lorem ipsum',style: TextStyle(fontSize: 14,fontFamily: 'Roboto-Regular'),),
-                  ],
-                ),
-              ],
+            Padding(
+              padding: EdgeInsets.only(top:mediaQueryHeight * 0.05,),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Column(
+                    children: [
+                      SizedBox(
+                        width: mediaQueryWidth * 0.4,
+                        height: mediaQueryHeight * 0.16,
+                        child:
+                        Image.asset('assets/images/watch.png'),
+                      ),
+                      Padding(
+                        padding:  EdgeInsets.only(top:mediaQueryHeight * 0.005,),
+                        child: const Text(
+                          'Lorem ipsum',
+                          style:
+                              TextStyle(fontSize: 14, fontFamily: 'Roboto-Regular'),
+                        ),
+                      ),
+                    ],
+                  ),
+                  SizedBox(
+                    width: mediaQueryWidth * 0.01,
+                  ),
+                  Column(
+                    children: [
+                      SizedBox(
+                        width: mediaQueryWidth * 0.4,
+                        height: mediaQueryHeight * 0.16,
+                        child:
+                        Image.asset('assets/images/watch.png'),
+                      ),
+                      Padding(
+                        padding:  EdgeInsets.only(top:mediaQueryHeight * 0.005,),
+                        child: const Text(
+                          'Lorem ipsum',
+                          style:
+                              TextStyle(fontSize: 14, fontFamily: 'Roboto-Regular'),
+                        ),
+                      ),
+                    ],
+                  ),
+                ],
+              ),
             ),
-            SizedBox(height: mediaQueryHeight*0.05,),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Column(
-                  children: [
-                    Container(
-                      width: mediaQueryWidth * 0.4,
-                      height: mediaQueryHeight * 0.16,
-                      child: Image.asset('assets/images/NoPath - Copy (28).png'),
-                    ),
-                    SizedBox(height: mediaQueryHeight*0.005,),
-                    Text('Lorem ipsum',style: TextStyle(fontSize: 14,fontFamily: 'Roboto-Regular'),),
-                  ],
-                ),
-                SizedBox(width: mediaQueryWidth*0.01,),
-                Column(
-                  children: [
-                    Container(
-                      width: mediaQueryWidth * 0.4,
-                      height: mediaQueryHeight * 0.16,
-                      child: Image.asset('assets/images/NoPath - Copy (29).png'),
-                    ),
-                    SizedBox(height: mediaQueryHeight*0.005,),
-                    Text('Lorem ipsum',style: TextStyle(fontSize: 14,fontFamily: 'Roboto-Regular'),),
-                  ],
-                ),
-              ],
+            Padding(
+              padding: EdgeInsets.only(top:mediaQueryHeight * 0.05,),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Column(
+                    children: [
+                      SizedBox(
+                        width: mediaQueryWidth * 0.4,
+                        height: mediaQueryHeight * 0.16,
+                        child:
+                        Image.asset('assets/images/watch.png'),
+                      ),
+                      Padding(
+                        padding: EdgeInsets.only(top:mediaQueryHeight * 0.005,),
+                        child: const Text(
+                          'Lorem ipsum',
+                          style:
+                              TextStyle(fontSize: 14, fontFamily: 'Roboto-Regular'),
+                        ),
+                      ),
+                    ],
+                  ),
+                  SizedBox(
+                    width: mediaQueryWidth * 0.01,
+                  ),
+                  Column(
+                    children: [
+                      SizedBox(
+                        width: mediaQueryWidth * 0.4,
+                        height: mediaQueryHeight * 0.16,
+                        child:
+                        Image.asset('assets/images/watch.png'),
+                      ),
+                      Padding(
+                        padding: EdgeInsets.only(top:mediaQueryHeight * 0.005,),
+                        child: const Text(
+                          'Lorem ipsum',
+                          style:
+                              TextStyle(fontSize: 14, fontFamily: 'Roboto-Regular'),
+                        ),
+                      ),
+                    ],
+                  ),
+                ],
+              ),
             ),
-            SizedBox(height: mediaQueryHeight*0.05,),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Column(
-                  children: [
-                    Container(
-                      width: mediaQueryWidth * 0.4,
-                      height: mediaQueryHeight * 0.16,
-                      child: Image.asset('assets/images/NoPath - Copy (30).png'),
-                    ),
-                    SizedBox(height: mediaQueryHeight*0.005,),
-                    Text('Lorem ipsum',style: TextStyle(fontSize: 14,fontFamily: 'Roboto-Regular'),),
-                  ],
-                ),
-                SizedBox(width: mediaQueryWidth*0.01,),
-                Column(
-                  children: [
-                    Container(
-                      width: mediaQueryWidth * 0.4,
-                      height: mediaQueryHeight * 0.16,
-                      child: Image.asset('assets/images/NoPath - Copy (31).png'),
-                    ),
-                    SizedBox(height: mediaQueryHeight*0.005,),
-                    Text('Lorem ipsum',style: TextStyle(fontSize: 14,fontFamily: 'Roboto-Regular'),),
-                  ],
-                ),
-              ],
+            Padding(
+              padding:  EdgeInsets.only(top:mediaQueryHeight * 0.05,),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Column(
+                    children: [
+                      SizedBox(
+                        width: mediaQueryWidth * 0.4,
+                        height: mediaQueryHeight * 0.16,
+                        child:
+                        Image.asset('assets/images/watch.png'),
+                      ),
+                      Padding(
+                        padding: EdgeInsets.only(top:mediaQueryHeight * 0.005,),
+                        child: const Text(
+                          'Lorem ipsum',
+                          style:
+                              TextStyle(fontSize: 14, fontFamily: 'Roboto-Regular'),
+                        ),
+                      ),
+                    ],
+                  ),
+                  SizedBox(
+                    width: mediaQueryWidth * 0.01,
+                  ),
+                  Column(
+                    children: [
+                      SizedBox(
+                        width: mediaQueryWidth * 0.4,
+                        height: mediaQueryHeight * 0.16,
+                        child:
+                            Image.asset('assets/images/watch.png'),
+                      ),
+                      Padding(
+                        padding: EdgeInsets.only(top:mediaQueryHeight * 0.005, bottom: mediaQueryHeight * 0.1,),
+                        child: const Text(
+                          'Lorem ipsum',
+                          style:
+                              TextStyle(fontSize: 14, fontFamily: 'Roboto-Regular'),
+                        ),
+                      ),
+                    ],
+                  ),
+                ],
+              ),
             ),
-            SizedBox(height: mediaQueryHeight*0.1,),
           ],
         ),
       ),

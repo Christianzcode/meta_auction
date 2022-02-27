@@ -16,10 +16,8 @@ class Details extends StatelessWidget {
     var mediaQueryWidth = MediaQuery.of(context).size.width;
     return
       Column(children: [
-        SizedBox(
-          height: mediaQueryHeight * 0.08,
-        ),
         Container(
+          padding: EdgeInsets.only(top:mediaQueryHeight * 0.08),
             height: 36,
             decoration: BoxDecoration(color: Colors.grey[300],
               border:const Border(
@@ -113,7 +111,7 @@ class Details extends StatelessWidget {
                 children: [
                   const Text("Dial Color",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 15),),
                   Text(
-                    w[index].dialcolor,style: const TextStyle(color:Colors.black45,)
+                    w[index].dialColor,style: const TextStyle(color:Colors.black45,)
                   ),
 
                 ],
@@ -186,7 +184,7 @@ class Details extends StatelessWidget {
                 children: [
                   const Text("Last Bid",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 15),),
                   Text(
-                    w[index].lastbid,style: const TextStyle(color:Colors.black45,)
+                    w[index].lastBid,style: const TextStyle(color:Colors.black45,)
                   ),
 
                 ],
@@ -239,29 +237,29 @@ class Details extends StatelessWidget {
                 ],
               ),
             )),
-        SizedBox(
-          height: mediaQueryHeight*0.1,
-        ),
-        ElevatedButton(
-          onPressed: () {
+        Padding(
+          padding:  EdgeInsets.only(top:mediaQueryHeight*0.1),
+          child: ElevatedButton(
+            onPressed: () {
 
-            },
+              },
 
-          child: const Text(
-            'Add To Favorites',
-            style: TextStyle(
-                color: Colors.white,
-                fontSize: 18,
-                fontWeight: FontWeight.bold,
-                fontFamily: 'Roboto-Medium'),
-          ),
-          style: ElevatedButton.styleFrom(
-            padding: EdgeInsets.symmetric(
-                horizontal: mediaQueryWidth * 0.15,
-                vertical: mediaQueryHeight * 0.015),
-            primary: Theme.of(context).primaryColor,
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(12.0),
+            child: const Text(
+              'Add To Favorites',
+              style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 18,
+                  fontWeight: FontWeight.bold,
+                  fontFamily: 'Roboto-Medium'),
+            ),
+            style: ElevatedButton.styleFrom(
+              padding: EdgeInsets.symmetric(
+                  horizontal: mediaQueryWidth * 0.15,
+                  vertical: mediaQueryHeight * 0.015),
+              primary: Theme.of(context).primaryColor,
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(12.0),
+              ),
             ),
           ),
         ),

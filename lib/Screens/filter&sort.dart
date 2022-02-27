@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:meta_auction/Helpers/filter_fake.dart';
 import 'package:meta_auction/Models/filter.dart';
 
 class FilterAndSort extends StatefulWidget {
@@ -12,165 +13,16 @@ class _FilterAndSortState extends State<FilterAndSort> {
   late bool checked = false;
   late bool checked1 = false;
   late List<Filter> chosen = [];
-  late List<Filter> list1 = [
-    Filter(
-        name: 'All Watches',
-        color: Color.fromRGBO(112, 112, 112, 0.1),
-        textColor: Colors.black),
-    Filter(
-        name: 'Boutique',
-        color: Color.fromRGBO(112, 112, 112, 0.1),
-        textColor: Colors.black),
-    Filter(
-        name: 'Metal',
-        color: Color.fromRGBO(112, 112, 112, 0.1),
-        textColor: Colors.black),
-    Filter(
-        name: 'Brand',
-        color: Color.fromRGBO(112, 112, 112, 0.1),
-        textColor: Colors.black),
-    Filter(
-        name: 'Braclet',
-        color: Color.fromRGBO(112, 112, 112, 0.1),
-        textColor: Colors.black),
-    Filter(
-        name: 'Classic',
-        color: Color.fromRGBO(112, 112, 112, 0.1),
-        textColor: Colors.black),
-    Filter(
-        name: 'Expensive',
-        color: Color.fromRGBO(112, 112, 112, 0.1),
-        textColor: Colors.black),
-    Filter(
-        name: 'Price',
-        color: Color.fromRGBO(112, 112, 112, 0.1),
-        textColor: Colors.black),
-    Filter(
-        name: 'Price',
-        color: Color.fromRGBO(112, 112, 112, 0.1),
-        textColor: Colors.black),
-  ];
-
-  late List<Filter> list2 = [
-    Filter(
-        name: 'All Watches',
-        color: Color.fromRGBO(112, 112, 112, 0.1),
-        textColor: Colors.black),
-    Filter(
-        name: 'Boutique',
-        color: Color.fromRGBO(112, 112, 112, 0.1),
-        textColor: Colors.black),
-    Filter(
-        name: 'Metal',
-        color: Color.fromRGBO(112, 112, 112, 0.1),
-        textColor: Colors.black),
-    Filter(
-        name: 'Brand',
-        color: Color.fromRGBO(112, 112, 112, 0.1),
-        textColor: Colors.black),
-    Filter(
-        name: 'Braclet',
-        color: Color.fromRGBO(112, 112, 112, 0.1),
-        textColor: Colors.black),
-    Filter(
-        name: 'Classic',
-        color: Color.fromRGBO(112, 112, 112, 0.1),
-        textColor: Colors.black),
-    Filter(
-        name: 'Expensive',
-        color: Color.fromRGBO(112, 112, 112, 0.1),
-        textColor: Colors.black),
-    Filter(
-        name: 'Price',
-        color: Color.fromRGBO(112, 112, 112, 0.1),
-        textColor: Colors.black),
-    Filter(
-        name: 'Price',
-        color: Color.fromRGBO(112, 112, 112, 0.1),
-        textColor: Colors.black),
-  ];
+  late List<Filter> list1 = [];
+  late List<Filter> list2 = [];
 
 
   @override
   void initState(){
    checked = false;
    checked1 = false;
-    list1 = [
-      Filter(
-          name: 'All Watches',
-          color: Color.fromRGBO(112, 112, 112, 0.1),
-          textColor: Colors.black),
-      Filter(
-          name: 'Boutique',
-          color: Color.fromRGBO(112, 112, 112, 0.1),
-          textColor: Colors.black),
-      Filter(
-          name: 'Metal',
-          color: Color.fromRGBO(112, 112, 112, 0.1),
-          textColor: Colors.black),
-      Filter(
-          name: 'Brand',
-          color: Color.fromRGBO(112, 112, 112, 0.1),
-          textColor: Colors.black),
-      Filter(
-          name: 'Braclet',
-          color: Color.fromRGBO(112, 112, 112, 0.1),
-          textColor: Colors.black),
-      Filter(
-          name: 'Classic',
-          color: Color.fromRGBO(112, 112, 112, 0.1),
-          textColor: Colors.black),
-      Filter(
-          name: 'Expensive',
-          color: Color.fromRGBO(112, 112, 112, 0.1),
-          textColor: Colors.black),
-      Filter(
-          name: 'Price',
-          color: Color.fromRGBO(112, 112, 112, 0.1),
-          textColor: Colors.black),
-      Filter(
-          name: 'Price',
-          color: Color.fromRGBO(112, 112, 112, 0.1),
-          textColor: Colors.black),
-    ];
-    list2 = [
-      Filter(
-          name: 'All Watches',
-          color: Color.fromRGBO(112, 112, 112, 0.1),
-          textColor: Colors.black),
-      Filter(
-          name: 'Boutique',
-          color: Color.fromRGBO(112, 112, 112, 0.1),
-          textColor: Colors.black),
-      Filter(
-          name: 'Metal',
-          color: Color.fromRGBO(112, 112, 112, 0.1),
-          textColor: Colors.black),
-      Filter(
-          name: 'Brand',
-          color: Color.fromRGBO(112, 112, 112, 0.1),
-          textColor: Colors.black),
-      Filter(
-          name: 'Braclet',
-          color: Color.fromRGBO(112, 112, 112, 0.1),
-          textColor: Colors.black),
-      Filter(
-          name: 'Classic',
-          color: Color.fromRGBO(112, 112, 112, 0.1),
-          textColor: Colors.black),
-      Filter(
-          name: 'Expensive',
-          color: Color.fromRGBO(112, 112, 112, 0.1),
-          textColor: Colors.black),
-      Filter(
-          name: 'Price',
-          color: Color.fromRGBO(112, 112, 112, 0.1),
-          textColor: Colors.black),
-      Filter(
-          name: 'Price',
-          color: Color.fromRGBO(112, 112, 112, 0.1),
-          textColor: Colors.black),
-    ];
+    list1=filter1;
+    list2=filter2;
   }
 
   @override
@@ -182,8 +34,8 @@ class _FilterAndSortState extends State<FilterAndSort> {
         backgroundColor: Colors.white,
         resizeToAvoidBottomInset: false,
         appBar: AppBar(
-          backgroundColor: Color.fromRGBO(91, 63, 112, 1),
-          title: Center(
+          backgroundColor: Theme.of(context).primaryColor,
+          title: const Center(
             child: Text(
               'FILTER AND SORT',
               style: TextStyle(
@@ -194,7 +46,7 @@ class _FilterAndSortState extends State<FilterAndSort> {
           ),
           actions: [
             IconButton(
-              icon: Icon(Icons.clear),
+              icon: const Icon(Icons.clear),
               onPressed: () {
                 Navigator.pop(context);
               },
@@ -211,19 +63,19 @@ class _FilterAndSortState extends State<FilterAndSort> {
               },
               child: Container(
                 height: mediaQueryHeight*0.08,
-                decoration: BoxDecoration(border: Border(bottom: BorderSide(color: Colors.black,width: 0.2),),),
+                decoration: const BoxDecoration(border: Border(bottom: BorderSide(color: Colors.black,width: 0.2),),),
                 child: Row(mainAxisAlignment: MainAxisAlignment.spaceBetween ,children: [
-                  Text('Category',style: TextStyle(fontSize: 20,fontWeight: FontWeight.w400,fontFamily: 'Roboto-Medium'),),
+                  const Text('Category',style: TextStyle(fontSize: 20,fontWeight: FontWeight.w400,fontFamily: 'Roboto-Medium'),),
                   Icon(checked? Icons.keyboard_arrow_up: Icons.keyboard_arrow_down)
                 ],),
               ),
             ),
             checked? Container(
-              color: Color.fromRGBO(112, 112, 112, 0.1),
+              color: const Color.fromRGBO(112, 112, 112, 0.1),
               width: mediaQueryWidth,
               height: mediaQueryHeight * 0.2,
               child: GridView.builder(
-                physics: NeverScrollableScrollPhysics(),
+                physics: const NeverScrollableScrollPhysics(),
                 shrinkWrap: true,
                 gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                   crossAxisCount: 4,
@@ -239,12 +91,12 @@ class _FilterAndSortState extends State<FilterAndSort> {
                     child: GestureDetector(
                       onTap: () {
                         setState(() {
-                          if (list1[index].color == Color.fromRGBO(112, 112, 112, 0.2)) {
+                          if (list1[index].color == const Color.fromRGBO(112, 112, 112, 0.2)) {
                             list1[index].color = Theme.of(context).primaryColor;
                             list1[index].textColor = Colors.white;
                             chosen.add(list1[index]);
                           } else {
-                            list1[index].color = Color.fromRGBO(112, 112, 112, 0.2);
+                            list1[index].color = const Color.fromRGBO(112, 112, 112, 0.2);
                             list1[index].textColor = Colors.black;
                             chosen.removeWhere((e) => e==list1[index]);
                           }
@@ -277,19 +129,19 @@ class _FilterAndSortState extends State<FilterAndSort> {
               },
               child: Container(
                 height: mediaQueryHeight*0.08,
-                decoration: BoxDecoration(border: Border(bottom: BorderSide(color: Colors.black,width: 0.2),),),
+                decoration: const BoxDecoration(border: Border(bottom: BorderSide(color: Colors.black,width: 0.2),),),
                 child: Row(mainAxisAlignment: MainAxisAlignment.spaceBetween ,children: [
-                  Text('Category',style: TextStyle(fontSize: 20,fontWeight: FontWeight.w400,fontFamily: 'Roboto-Medium'),),
+                  const Text('Category',style: TextStyle(fontSize: 20,fontWeight: FontWeight.w400,fontFamily: 'Roboto-Medium'),),
                   Icon(checked1? Icons.keyboard_arrow_up: Icons.keyboard_arrow_down)
                 ],),
               ),
             ),
             checked1? Container(
-              color: Color.fromRGBO(112, 112, 112, 0.1),
+              color: const Color.fromRGBO(112, 112, 112, 0.1),
               width: mediaQueryWidth,
               height: mediaQueryHeight * 0.2,
               child: GridView.builder(
-                physics: NeverScrollableScrollPhysics(),
+                physics: const NeverScrollableScrollPhysics(),
                 shrinkWrap: true,
                 gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                   crossAxisCount: 4,
@@ -305,12 +157,12 @@ class _FilterAndSortState extends State<FilterAndSort> {
                     child: GestureDetector(
                       onTap: () {
                         setState(() {
-                          if (list2[index].color == Color.fromRGBO(112, 112, 112, 0.2)) {
+                          if (list2[index].color == const Color.fromRGBO(112, 112, 112, 0.2)) {
                             list2[index].color = Theme.of(context).primaryColor;
                             list2[index].textColor = Colors.white;
                             chosen.add(list2[index]);
                           } else {
-                            list2[index].color = Color.fromRGBO(112, 112, 112, 0.2);
+                            list2[index].color = const Color.fromRGBO(112, 112, 112, 0.2);
                             list2[index].textColor = Colors.black;
                             chosen.removeWhere((e) => e==list2[index]);
                           }

@@ -8,10 +8,10 @@ class ChangePassword extends StatefulWidget {
 }
 
 class _ChangePasswordState extends State<ChangePassword> {
-  TextEditingController _oldpassword = TextEditingController();
-  TextEditingController _password = TextEditingController();
-  TextEditingController _confirmpassword = TextEditingController();
-  GlobalKey<FormState> _formKey = GlobalKey<FormState>();
+  final TextEditingController _oldpassword = TextEditingController();
+  final TextEditingController _password = TextEditingController();
+  final TextEditingController _confirmpassword = TextEditingController();
+  final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
   var value = Characters.empty;
 
   validatePass() {
@@ -54,13 +54,11 @@ class _ChangePasswordState extends State<ChangePassword> {
                 style: TextStyle(fontSize: 22, fontFamily: 'Roboto-Regular'),
               ),
               backgroundColor: Theme.of(context).primaryColor,
-              leading: GestureDetector(
-                onTap: () {
+              leading: IconButton(
+                icon: Icon(Icons.arrow_back),
+                onPressed: () {
                   Navigator.pop(context);
                 },
-                child: const Icon(
-                  Icons.arrow_back,
-                ),
               ),
             ),
             body: SingleChildScrollView(
@@ -82,8 +80,8 @@ class _ChangePasswordState extends State<ChangePassword> {
                         controller: _oldpassword,
                         obscureText: true,
                         validator: validatePass(),
-                        decoration: InputDecoration(
-                          label: const Text(
+                        decoration: const InputDecoration(
+                          label: Text(
                             'OLD PASSWORD',
                             style: TextStyle(fontSize: 16, color: Colors.black38),
                           ),
@@ -106,8 +104,8 @@ class _ChangePasswordState extends State<ChangePassword> {
                           child: TextFormField(
                             controller: _password,
                             obscureText: true,
-                            decoration: InputDecoration(
-                              label: const Text(
+                            decoration: const InputDecoration(
+                              label: Text(
                                 'NEW PASSWORD',
                                 textAlign: TextAlign.center,
                                 style: TextStyle(fontSize: 16, color: Colors.black38),
@@ -134,8 +132,8 @@ class _ChangePasswordState extends State<ChangePassword> {
                           child: TextFormField(
                             controller: _confirmpassword,
                             obscureText: true,
-                            decoration: InputDecoration(
-                             label: const Text(
+                            decoration: const InputDecoration(
+                             label: Text(
                                'CONFIRM PASSWORD',
                                textAlign: TextAlign.center,
                                style: TextStyle(fontSize: 16, color: Colors.black38),
@@ -153,7 +151,7 @@ class _ChangePasswordState extends State<ChangePassword> {
                     ),
                   ),
                   ElevatedButton(
-                    child: Text(
+                    child: const Text(
                       "Confirm",
                       style: TextStyle(
                           color: Colors.white,

@@ -22,7 +22,7 @@ class _SignUpState extends State<SignUp> {
                   style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
                   textAlign: TextAlign.center),
             ),
-            backgroundColor: const Color.fromRGBO(91, 63, 112, 1),
+            backgroundColor: Theme.of(context).primaryColor,
           ),
           backgroundColor: Colors.white,
           body: SingleChildScrollView(
@@ -136,7 +136,7 @@ class _SignUpState extends State<SignUp> {
                       padding: EdgeInsets.symmetric(
                           horizontal: mediaQueryWidth * 0.25,
                           vertical: mediaQueryHeight * 0.020),
-                      primary: const Color.fromRGBO(91, 63, 112, 1),
+                      primary: Theme.of(context).primaryColor,
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(40.0),
                       ),
@@ -154,12 +154,12 @@ class _SignUpState extends State<SignUp> {
                         onPressed: () {
                           Navigator.pushNamed(context, 'LogIn');
                         },
-                        child: const Text(
+                        child:  Text(
                           "SIGN IN",
                           style: TextStyle(
                             fontSize: 15,
                             fontFamily: 'Roboto-Regular',
-                            color: Color.fromRGBO(91, 63, 112, 1),
+                            color: Theme.of(context).primaryColor,
                           ),
                         )),
                   ],
