@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:meta_auction/Models/watch.dart';
 import 'package:meta_auction/Screens/general_details.dart';
+import 'package:meta_auction/Screens/see_all.dart';
 import '../Helpers/watch_fake.dart';
 
 class HomePage extends StatefulWidget {
@@ -13,6 +14,8 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     List<Watch> list = wat;
+    List<Watch> topSelling =
+        List.from(wat.where((element) => element.topSelling == true));
     var mediaQueryHeight = MediaQuery.of(context).size.height;
     var mediaQueryWidth = MediaQuery.of(context).size.width;
     return SafeArea(
@@ -33,7 +36,7 @@ class _HomePageState extends State<HomePage> {
                 onPressed: () {
                   Navigator.pushNamed(context, 'Favorites');
                 },
-                icon: const Icon(CupertinoIcons.heart))
+                icon: const Icon(Icons.favorite_border))
           ],
         ),
         body: Column(
@@ -64,7 +67,11 @@ class _HomePageState extends State<HomePage> {
                             ),
                             TextButton(
                                 onPressed: () {
-                                  Navigator.pushNamed(context,'SeeAll');
+                                  Navigator.of(context).push(
+                                      MaterialPageRoute(
+                                          builder: (context) =>
+                                              SeeAll(
+                                                  watch: topSelling)));
                                 },
                                 child: const Text(
                                   "See all >>",
@@ -78,23 +85,25 @@ class _HomePageState extends State<HomePage> {
                           height: mediaQueryHeight * 0.25,
                           child: ListView.builder(
                               scrollDirection: Axis.horizontal,
-                              itemCount: list.length,
+                              itemCount: topSelling.length,
                               itemBuilder: (context, index) {
                                 return GestureDetector(
-                                  onTap: (){
+                                  onTap: () {
                                     Navigator.of(context).push(
                                         MaterialPageRoute(
                                             builder: (context) =>
-                                                GeneralDetails(watch: list[index])));                                  },
+                                                GeneralDetails(
+                                                    watch: topSelling[index])));
+                                  },
                                   child: Column(
                                     children: [
-                                      Image.asset(list[index].image),
+                                      Image.asset(topSelling[index].image),
                                       Padding(
                                         padding: EdgeInsets.only(
                                           top: mediaQueryHeight * 0.02,
                                         ),
                                         child: Text(
-                                          list[index].name,
+                                          topSelling[index].name,
                                           style: TextStyle(
                                               color:
                                                   Color.fromRGBO(39, 40, 50, 1),
@@ -150,7 +159,8 @@ class _HomePageState extends State<HomePage> {
                   onPressed: () {
                     Navigator.pushNamed(context, 'Filter');
                   },
-                  icon: const Icon(CupertinoIcons.sort_down),
+                  icon:
+                      const ImageIcon(AssetImage('assets/images/Symbols.png')),
                 ),
                 ElevatedButton(
                   onPressed: () {
@@ -200,17 +210,62 @@ class _HomePageState extends State<HomePage> {
               ],
             ),
             Expanded(
-              child: ListView.builder(
+              child: ListView.separated(
+                separatorBuilder: (context, index) {
+                  return const Divider(
+                    color: Colors.grey,
+                  );
+                },
                 itemCount: list.length,
                 itemBuilder: (context, i) {
-                  return Column(
-                    children: [
-                      SizedBox(
-                        height: mediaQueryHeight * 0.5,
-                        width: mediaQueryWidth * 0.9,
-                        child: Image.asset(list[i].image),
-                      )
-                    ],
+                  return ListTile(
+                    title: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Row(
+                          children: [
+                            list[i].auctioned
+                                ? ImageIcon(
+                                    AssetImage('assets/images/pngegg.png'),
+                                    color: Colors.green,
+                                  )
+                                : Icon(
+                                    Icons.thumb_down_alt,
+                                    color: Colors.red,
+                                    size: 20,
+                                  ),
+                            Text('  '+
+                              list[i].name +
+                                  ' ' +
+                                  list[i].metal +
+                                  ' ' +
+                                  list[i].dialColor +
+                                  ' color ' +
+                                  list[i].condition +
+                                  ' ${list[i].year}',
+                              style: TextStyle(
+                                  color: Colors.black,
+                                  fontFamily: 'Roboto',
+                                  fontSize: 15),
+                            ),
+                          ],
+                        ),
+                        Text(
+                          '${list[i].lastBid}USD',
+                          style: TextStyle(
+                              fontSize: 12,
+                              fontFamily: 'Roboto',
+                              color: Colors.grey),
+                        )
+                      ],
+                    ),
+                    trailing: IconButton(
+                        onPressed: () {
+                          Navigator.of(context).push(MaterialPageRoute(
+                              builder: (context) =>
+                                  GeneralDetails(watch: topSelling[i])));
+                        },
+                        icon: Icon(Icons.more_vert)),
                   );
                 },
               ),

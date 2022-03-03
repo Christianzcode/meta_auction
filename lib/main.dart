@@ -40,7 +40,6 @@ class MyApp extends StatelessWidget {
         'ChangePassword': (context) =>  ChangePassword(),
         'ResetPasswordCheck': (context) =>  ResetPasswordCheck(),
         'Filter': (context) =>  FilterAndSort(),
-        'SeeAll': (context) =>  SeeAll(),
         'Favorites': (context) =>  Favorites(),
       },
     );

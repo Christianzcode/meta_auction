@@ -34,15 +34,14 @@ class _FilterAndSortState extends State<FilterAndSort> {
         backgroundColor: Colors.white,
         resizeToAvoidBottomInset: false,
         appBar: AppBar(
+          automaticallyImplyLeading: false,
           backgroundColor: Theme.of(context).primaryColor,
-          title: const Center(
-            child: Text(
-              'FILTER AND SORT',
-              style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 20,
-                  fontFamily: 'Roboto-Medium'),
-            ),
+          title: Text(
+            'FILTER AND SORT',
+            style: TextStyle(
+                color: Colors.white,
+                fontSize: 20,
+                fontFamily: 'Roboto-Medium'),
           ),
           actions: [
             IconButton(

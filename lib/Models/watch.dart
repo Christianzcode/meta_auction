@@ -11,6 +11,8 @@ class Watch {
   late DateTime date;
   late String image;
   late bool favorite;
+  late bool topSelling;
+  late bool auctioned;
   Watch(
       {required this.name,
         required this.brand,
@@ -24,5 +26,7 @@ class Watch {
         required this.date,
         required this.image,
         required this.favorite,
+        required this.topSelling,
+        required this.auctioned
         });
 }

@@ -10,6 +10,7 @@ class LogIn extends StatefulWidget {
 class _LogInState extends State<LogIn> {
   GlobalKey<FormState> formkey = GlobalKey<FormState>();
   String? password = '', confirmPassword = '', email = '';
+
   bool validate() {
     if (formkey.currentState != null) {
       if (formkey.currentState!.validate()) {
@@ -30,15 +31,15 @@ class _LogInState extends State<LogIn> {
 
   String? validatePass(value) {
     if (value.trim().isEmpty) {
-      return "Required";
+      return "This field is required";
     }
-    // if (value.trim().length < 6) {
-    //   return "this field should be at least 6 character";
-    // }
-    // if (!RegExp(r"[A-Z]").hasMatch(value) == true ||
-    //     !RegExp(r"[a-z]").hasMatch(value) == true) {
-    //   return "Must have Upper,LowerCase";
-    // }
+    if (value.trim().length < 6) {
+      return "this field should be at least 6 character";
+    }
+    if (!RegExp(r"[A-Z]").hasMatch(value) == true ||
+        !RegExp(r"[a-z]").hasMatch(value) == true) {
+      return "Must have Upper,LowerCase";
+    }
     return null;
   }
 
@@ -63,45 +64,33 @@ class _LogInState extends State<LogIn> {
           ),
           backgroundColor: Colors.white,
           body: SingleChildScrollView(
-            child:  Form(
+            child: Form(
               key: formkey,
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Padding(
-                    padding: EdgeInsets.only(top:mediaQueryHeight * 0.01),
+                    padding: EdgeInsets.only(top: mediaQueryHeight * 0.01),
                     child: SizedBox(
-                      height: mediaQueryHeight * 0.38,
-                      width: mediaQueryWidth,
-                            child: Image.asset(
-                              'assets/images/logo.png',)
-                    ),
+                        height: mediaQueryHeight * 0.38,
+                        width: mediaQueryWidth,
+                        child: Image.asset(
+                          'assets/images/logo.png',
+                        )),
                   ),
                   Padding(
                     padding: EdgeInsets.only(
-                      top: mediaQueryHeight * 0.005,
+                        top: mediaQueryHeight * 0.005,
                         bottom: mediaQueryHeight * 0.02,
                         right: mediaQueryHeight * 0.05,
                         left: mediaQueryWidth * 0.05),
                     child: TextFormField(
-                      validator: MultiValidator([
-                        RequiredValidator(errorText: 'Required *'),
-                        // EmailValidator(errorText: 'Not a valid email'),
-                      ]),
                       onSaved: (value) => email = value,
-                      autovalidateMode:
-                      AutovalidateMode.onUserInteraction,
+                      autovalidateMode: AutovalidateMode.onUserInteraction,
                       decoration: const InputDecoration(
-                        border: UnderlineInputBorder(),
-                        label: Text.rich(
-                          TextSpan(children: <InlineSpan>[
-                            WidgetSpan(
-                              child: Text(
-                                'Username or email',
-                                style: TextStyle(fontFamily: 'Roboto-Regular'),
-                              ),
-                            ),
-                          ]),
+                        label: Text(
+                          'Username or email',
+                          style: TextStyle(fontFamily: 'Roboto-Regular'),
                         ),
                         prefixIcon: Icon(Icons.email_outlined),
                       ),
@@ -109,28 +98,19 @@ class _LogInState extends State<LogIn> {
                   ),
                   Padding(
                     padding: EdgeInsets.only(
-                      top:mediaQueryHeight * 0.03,
+                        top: mediaQueryHeight * 0.03,
                         bottom: mediaQueryHeight * 0.02,
                         right: mediaQueryHeight * 0.05,
                         left: mediaQueryWidth * 0.05),
                     child: TextFormField(
-                      autovalidateMode:
-                      AutovalidateMode.onUserInteraction,
+                      autovalidateMode: AutovalidateMode.onUserInteraction,
                       onChanged: (value) => password = value,
-                      validator: validatePass,
                       obscureText: _isObscure,
                       controller: passwordController,
                       decoration: InputDecoration(
-                        border: const UnderlineInputBorder(),
-                        label: const Text.rich(
-                          TextSpan(children: <InlineSpan>[
-                            WidgetSpan(
-                              child: Text(
-                                'Password',
-                                style: TextStyle(fontFamily: 'Roboto-Regular'),
-                              ),
-                            ),
-                          ]),
+                        label: Text(
+                          'Password',
+                          style: TextStyle(fontFamily: 'Roboto-Regular'),
                         ),
                         prefixIcon: const Icon(Icons.lock_outline),
                         suffixIcon: IconButton(
@@ -150,36 +130,43 @@ class _LogInState extends State<LogIn> {
                     ),
                   ),
                   Padding(
-                    padding:
-                        EdgeInsets.symmetric(horizontal: mediaQueryWidth * 0.07, vertical: mediaQueryHeight * 0.02,),
+                    padding: EdgeInsets.symmetric(
+                      horizontal: mediaQueryWidth * 0.07,
+                      vertical: mediaQueryHeight * 0.02,
+                    ),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.end,
                       children: [
                         TextButton(
                             onPressed: () {
                               Navigator.of(context).push(MaterialPageRoute(
-                                  builder: (context) => const ForgotPassword()));
+                                  builder: (context) =>
+                                      const ForgotPassword()));
                             },
                             child: const Text(
                               "Forgot password?",
                               style: TextStyle(
                                   fontSize: 15,
                                   fontFamily: 'Roboto-Regular',
-                                  color: Colors.grey),
+                                  color: Colors.black),
                             ))
                       ],
                     ),
                   ),
                   Padding(
-                    padding: EdgeInsets.only(top: mediaQueryHeight * 0.02,),
+                    padding: EdgeInsets.only(
+                      top: mediaQueryHeight * 0.02,
+                    ),
                     child: ElevatedButton(
                       onPressed: () {
-                        if (!formkey.currentState!.validate()) {
-                          // return;
+                        if (formkey.currentState!.validate() == false) {
+                          // ignore: avoid_print
+                          print('Not Validated');
+                          // reset!=null?
+                        } else {
+                          Navigator.pushNamedAndRemoveUntil(context, 'HomePage',
+                              (Route<dynamic> route) => false);
                         }
-                        else {
-                        Navigator.pushNamedAndRemoveUntil(
-                            context, 'HomePage', (Route<dynamic> route) => false);}
                       },
                       child: const Text(
                         ' LOG IN ',

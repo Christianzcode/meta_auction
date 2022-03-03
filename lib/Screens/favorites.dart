@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 
+import '../Helpers/watch_fake.dart';
+import '../Models/watch.dart';
+
 class Favorites extends StatefulWidget {
   const Favorites({Key? key}) : super(key: key);
 
@@ -10,6 +13,8 @@ class Favorites extends StatefulWidget {
 class _FavoritesState extends State<Favorites> {
   @override
   Widget build(BuildContext context) {
+    List<Watch> fav =
+    List.from(wat.where((element) => element.favorite == true));
     var mediaQueryHeight = MediaQuery.of(context).size.height;
     var mediaQueryWidth = MediaQuery.of(context).size.width;
     return SafeArea(
@@ -18,17 +23,43 @@ class _FavoritesState extends State<Favorites> {
         resizeToAvoidBottomInset: false,
         appBar: AppBar(
           backgroundColor: Theme.of(context).primaryColor,
-          title: const Center(
-            child: Text(
-              'FAVORITES',
-              style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 20,
-                  fontFamily: 'Roboto-Medium'),
-            ),
+          title: Text(
+            'FAVORITES',
+            style: TextStyle(
+                color: Colors.white,
+                fontSize: 20,
+                fontFamily: 'Roboto-Medium'),
           ),
         ),
-        body:
+        body: Padding(
+          padding:  EdgeInsets.only(top: mediaQueryHeight*0.04),
+          child: GridView.builder(
+                itemCount: fav.length,
+                gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
+                  maxCrossAxisExtent: 200,
+                  childAspectRatio: 1,
+                  crossAxisSpacing: 20,
+                  mainAxisSpacing: 20,
+                ),
+                itemBuilder: (context, i) {
+                  return Column(children: [
+                    SizedBox(
+                      width: mediaQueryWidth * 0.4,
+                      height: mediaQueryHeight * 0.16,
+                      child: Image.asset(fav[i].image),
+                    ),
+                    Padding(
+                      padding: EdgeInsets.only(top: mediaQueryHeight * 0.005),
+                      child: Text(
+                        fav[i].name,
+                        style: TextStyle(
+                            fontSize: 14, fontFamily: 'Roboto-Regular'),
+                      ),
+                    )
+                  ]);
+                }),
+        ),
+
             // Column(
             // mainAxisAlignment: MainAxisAlignment.center,
             // children: [
@@ -40,200 +71,200 @@ class _FavoritesState extends State<Favorites> {
             // ),
             // )
             // ],
-            ListView(
-          children: [
-            Padding(
-              padding: EdgeInsets.only(
-                top: mediaQueryHeight * 0.05,
-              ),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Column(
-                    children: [
-                      SizedBox(
-                        width: mediaQueryWidth * 0.4,
-                        height: mediaQueryHeight * 0.16,
-                        child:
-                        Image.asset('assets/images/watch.png'),
-                      ),
-                      Padding(
-                        padding: EdgeInsets.only(top: mediaQueryHeight * 0.005),
-                        child: const Text(
-                          'Lorem ipsum',
-                          style: TextStyle(
-                              fontSize: 14, fontFamily: 'Roboto-Regular'),
-                        ),
-                      )
-                    ],
-                  ),
-                  SizedBox(
-                    width: mediaQueryWidth * 0.01,
-                  ),
-                  Column(
-                    children: [
-                      SizedBox(
-                        width: mediaQueryWidth * 0.4,
-                        height: mediaQueryHeight * 0.16,
-                        child:
-                        Image.asset('assets/images/watch.png'),
-                      ),
-                      Padding(
-                        padding: EdgeInsets.only(top:mediaQueryHeight * 0.005),
-                        child: const Text(
-                          'Lorem ipsum',
-                          style: TextStyle(
-                              fontSize: 14, fontFamily: 'Roboto-Regular'),
-                        ),
-                      ),
-                    ],
-                  ),
-                ],
-              ),
-            ),
-            Padding(
-              padding: EdgeInsets.only(top:mediaQueryHeight * 0.05,),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Column(
-                    children: [
-                      SizedBox(
-                        width: mediaQueryWidth * 0.4,
-                        height: mediaQueryHeight * 0.16,
-                        child:
-                        Image.asset('assets/images/watch.png'),
-                      ),
-                      Padding(
-                        padding:  EdgeInsets.only(top:mediaQueryHeight * 0.005,),
-                        child: const Text(
-                          'Lorem ipsum',
-                          style:
-                              TextStyle(fontSize: 14, fontFamily: 'Roboto-Regular'),
-                        ),
-                      ),
-                    ],
-                  ),
-                  SizedBox(
-                    width: mediaQueryWidth * 0.01,
-                  ),
-                  Column(
-                    children: [
-                      SizedBox(
-                        width: mediaQueryWidth * 0.4,
-                        height: mediaQueryHeight * 0.16,
-                        child:
-                        Image.asset('assets/images/watch.png'),
-                      ),
-                      Padding(
-                        padding:  EdgeInsets.only(top:mediaQueryHeight * 0.005,),
-                        child: const Text(
-                          'Lorem ipsum',
-                          style:
-                              TextStyle(fontSize: 14, fontFamily: 'Roboto-Regular'),
-                        ),
-                      ),
-                    ],
-                  ),
-                ],
-              ),
-            ),
-            Padding(
-              padding: EdgeInsets.only(top:mediaQueryHeight * 0.05,),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Column(
-                    children: [
-                      SizedBox(
-                        width: mediaQueryWidth * 0.4,
-                        height: mediaQueryHeight * 0.16,
-                        child:
-                        Image.asset('assets/images/watch.png'),
-                      ),
-                      Padding(
-                        padding: EdgeInsets.only(top:mediaQueryHeight * 0.005,),
-                        child: const Text(
-                          'Lorem ipsum',
-                          style:
-                              TextStyle(fontSize: 14, fontFamily: 'Roboto-Regular'),
-                        ),
-                      ),
-                    ],
-                  ),
-                  SizedBox(
-                    width: mediaQueryWidth * 0.01,
-                  ),
-                  Column(
-                    children: [
-                      SizedBox(
-                        width: mediaQueryWidth * 0.4,
-                        height: mediaQueryHeight * 0.16,
-                        child:
-                        Image.asset('assets/images/watch.png'),
-                      ),
-                      Padding(
-                        padding: EdgeInsets.only(top:mediaQueryHeight * 0.005,),
-                        child: const Text(
-                          'Lorem ipsum',
-                          style:
-                              TextStyle(fontSize: 14, fontFamily: 'Roboto-Regular'),
-                        ),
-                      ),
-                    ],
-                  ),
-                ],
-              ),
-            ),
-            Padding(
-              padding:  EdgeInsets.only(top:mediaQueryHeight * 0.05,),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Column(
-                    children: [
-                      SizedBox(
-                        width: mediaQueryWidth * 0.4,
-                        height: mediaQueryHeight * 0.16,
-                        child:
-                        Image.asset('assets/images/watch.png'),
-                      ),
-                      Padding(
-                        padding: EdgeInsets.only(top:mediaQueryHeight * 0.005,),
-                        child: const Text(
-                          'Lorem ipsum',
-                          style:
-                              TextStyle(fontSize: 14, fontFamily: 'Roboto-Regular'),
-                        ),
-                      ),
-                    ],
-                  ),
-                  SizedBox(
-                    width: mediaQueryWidth * 0.01,
-                  ),
-                  Column(
-                    children: [
-                      SizedBox(
-                        width: mediaQueryWidth * 0.4,
-                        height: mediaQueryHeight * 0.16,
-                        child:
-                            Image.asset('assets/images/watch.png'),
-                      ),
-                      Padding(
-                        padding: EdgeInsets.only(top:mediaQueryHeight * 0.005, bottom: mediaQueryHeight * 0.1,),
-                        child: const Text(
-                          'Lorem ipsum',
-                          style:
-                              TextStyle(fontSize: 14, fontFamily: 'Roboto-Regular'),
-                        ),
-                      ),
-                    ],
-                  ),
-                ],
-              ),
-            ),
-          ],
-        ),
+        //     ListView(
+        //   children: [
+        //     Padding(
+        //       padding: EdgeInsets.only(
+        //         top: mediaQueryHeight * 0.05,
+        //       ),
+        //       child: Row(
+        //         mainAxisAlignment: MainAxisAlignment.center,
+        //         children: [
+        //           Column(
+        //             children: [
+        //               SizedBox(
+        //                 width: mediaQueryWidth * 0.4,
+        //                 height: mediaQueryHeight * 0.16,
+        //                 child:
+        //                 Image.asset('assets/images/watch.png'),
+        //               ),
+        //               Padding(
+        //                 padding: EdgeInsets.only(top: mediaQueryHeight * 0.005),
+        //                 child: const Text(
+        //                   'Lorem ipsum',
+        //                   style: TextStyle(
+        //                       fontSize: 14, fontFamily: 'Roboto-Regular'),
+        //                 ),
+        //               )
+        //             ],
+        //           ),
+        //           SizedBox(
+        //             width: mediaQueryWidth * 0.01,
+        //           ),
+        //           Column(
+        //             children: [
+        //               SizedBox(
+        //                 width: mediaQueryWidth * 0.4,
+        //                 height: mediaQueryHeight * 0.16,
+        //                 child:
+        //                 Image.asset('assets/images/watch.png'),
+        //               ),
+        //               Padding(
+        //                 padding: EdgeInsets.only(top:mediaQueryHeight * 0.005),
+        //                 child: const Text(
+        //                   'Lorem ipsum',
+        //                   style: TextStyle(
+        //                       fontSize: 14, fontFamily: 'Roboto-Regular'),
+        //                 ),
+        //               ),
+        //             ],
+        //           ),
+        //         ],
+        //       ),
+        //     ),
+        //     Padding(
+        //       padding: EdgeInsets.only(top:mediaQueryHeight * 0.05,),
+        //       child: Row(
+        //         mainAxisAlignment: MainAxisAlignment.center,
+        //         children: [
+        //           Column(
+        //             children: [
+        //               SizedBox(
+        //                 width: mediaQueryWidth * 0.4,
+        //                 height: mediaQueryHeight * 0.16,
+        //                 child:
+        //                 Image.asset('assets/images/watch.png'),
+        //               ),
+        //               Padding(
+        //                 padding:  EdgeInsets.only(top:mediaQueryHeight * 0.005,),
+        //                 child: const Text(
+        //                   'Lorem ipsum',
+        //                   style:
+        //                       TextStyle(fontSize: 14, fontFamily: 'Roboto-Regular'),
+        //                 ),
+        //               ),
+        //             ],
+        //           ),
+        //           SizedBox(
+        //             width: mediaQueryWidth * 0.01,
+        //           ),
+        //           Column(
+        //             children: [
+        //               SizedBox(
+        //                 width: mediaQueryWidth * 0.4,
+        //                 height: mediaQueryHeight * 0.16,
+        //                 child:
+        //                 Image.asset('assets/images/watch.png'),
+        //               ),
+        //               Padding(
+        //                 padding:  EdgeInsets.only(top:mediaQueryHeight * 0.005,),
+        //                 child: const Text(
+        //                   'Lorem ipsum',
+        //                   style:
+        //                       TextStyle(fontSize: 14, fontFamily: 'Roboto-Regular'),
+        //                 ),
+        //               ),
+        //             ],
+        //           ),
+        //         ],
+        //       ),
+        //     ),
+        //     Padding(
+        //       padding: EdgeInsets.only(top:mediaQueryHeight * 0.05,),
+        //       child: Row(
+        //         mainAxisAlignment: MainAxisAlignment.center,
+        //         children: [
+        //           Column(
+        //             children: [
+        //               SizedBox(
+        //                 width: mediaQueryWidth * 0.4,
+        //                 height: mediaQueryHeight * 0.16,
+        //                 child:
+        //                 Image.asset('assets/images/watch.png'),
+        //               ),
+        //               Padding(
+        //                 padding: EdgeInsets.only(top:mediaQueryHeight * 0.005,),
+        //                 child: const Text(
+        //                   'Lorem ipsum',
+        //                   style:
+        //                       TextStyle(fontSize: 14, fontFamily: 'Roboto-Regular'),
+        //                 ),
+        //               ),
+        //             ],
+        //           ),
+        //           SizedBox(
+        //             width: mediaQueryWidth * 0.01,
+        //           ),
+        //           Column(
+        //             children: [
+        //               SizedBox(
+        //                 width: mediaQueryWidth * 0.4,
+        //                 height: mediaQueryHeight * 0.16,
+        //                 child:
+        //                 Image.asset('assets/images/watch.png'),
+        //               ),
+        //               Padding(
+        //                 padding: EdgeInsets.only(top:mediaQueryHeight * 0.005,),
+        //                 child: const Text(
+        //                   'Lorem ipsum',
+        //                   style:
+        //                       TextStyle(fontSize: 14, fontFamily: 'Roboto-Regular'),
+        //                 ),
+        //               ),
+        //             ],
+        //           ),
+        //         ],
+        //       ),
+        //     ),
+        //     Padding(
+        //       padding:  EdgeInsets.only(top:mediaQueryHeight * 0.05,),
+        //       child: Row(
+        //         mainAxisAlignment: MainAxisAlignment.center,
+        //         children: [
+        //           Column(
+        //             children: [
+        //               SizedBox(
+        //                 width: mediaQueryWidth * 0.4,
+        //                 height: mediaQueryHeight * 0.16,
+        //                 child:
+        //                 Image.asset('assets/images/watch.png'),
+        //               ),
+        //               Padding(
+        //                 padding: EdgeInsets.only(top:mediaQueryHeight * 0.005,),
+        //                 child: const Text(
+        //                   'Lorem ipsum',
+        //                   style:
+        //                       TextStyle(fontSize: 14, fontFamily: 'Roboto-Regular'),
+        //                 ),
+        //               ),
+        //             ],
+        //           ),
+        //           SizedBox(
+        //             width: mediaQueryWidth * 0.01,
+        //           ),
+        //           Column(
+        //             children: [
+        //               SizedBox(
+        //                 width: mediaQueryWidth * 0.4,
+        //                 height: mediaQueryHeight * 0.16,
+        //                 child:
+        //                     Image.asset('assets/images/watch.png'),
+        //               ),
+        //               Padding(
+        //                 padding: EdgeInsets.only(top:mediaQueryHeight * 0.005, bottom: mediaQueryHeight * 0.1,),
+        //                 child: const Text(
+        //                   'Lorem ipsum',
+        //                   style:
+        //                       TextStyle(fontSize: 14, fontFamily: 'Roboto-Regular'),
+        //                 ),
+        //               ),
+        //             ],
+        //           ),
+        //         ],
+        //       ),
+        //     ),
+        //   ],
+        // ),
       ),
     );
   }
