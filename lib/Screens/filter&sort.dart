@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:meta_auction/Helpers/filter_fake.dart';
 import 'package:meta_auction/Models/filter.dart';
-import 'package:meta_auction/Widgets/choose.dart';
 
 
 
@@ -14,7 +13,7 @@ class FilterAndSort extends StatefulWidget {
 class _FilterAndSortState extends State<FilterAndSort> {
    bool checked = false;
    bool checked1 = false;
-   ChosenList chosen = ChosenList();
+   List<Filter> chosen = [];
    List<Filter> list1 = [];
    List<Filter> list2 = [];
 
@@ -113,12 +112,14 @@ class _FilterAndSortState extends State<FilterAndSort> {
                                           112, 112, 112, 0.2)) {
                                     list1[index].color =
                                         Theme.of(context).primaryColor;
-                                    chosen.listAdd(list1[index]);
+                                    list1[index].textColor = Colors.white;
+                                    chosens.add(list1[index]);
                                   } else {
                                     list1[index].color = const Color.fromRGBO(
                                         112, 112, 112, 0.2);
                                     list1[index].textColor = Colors.black;
-                                    chosen.listRemove(list1[index]);
+                                    chosens
+                                        .removeWhere((e) => e == list1[index]);
                                   }
                                 });
                               },
@@ -200,12 +201,13 @@ class _FilterAndSortState extends State<FilterAndSort> {
                                     list2[index].color =
                                         Theme.of(context).primaryColor;
                                     list2[index].textColor = Colors.white;
-                                    chosen.listAdd(list2[index]);
+                                    chosens.add(list2[index]);
                                   } else {
                                     list2[index].color = const Color.fromRGBO(
                                         112, 112, 112, 0.2);
                                     list2[index].textColor = Colors.black;
-                                    chosen.listRemove(list2[index]);
+                                    chosens
+                                        .removeWhere((e) => e == list2[index]);
                                   }
                                 });
                               },
