@@ -3,7 +3,7 @@ import 'package:meta_auction/Screens/Auth/reset_password_check.dart';
 import 'package:form_field_validator/form_field_validator.dart';
 
 class ForgotPassword extends StatefulWidget {
-  const ForgotPassword({Key? key}) : super(key: key);
+  const ForgotPassword() ;
 
   @override
   _ForgotPasswordState createState() => _ForgotPasswordState();
@@ -14,7 +14,7 @@ class _ForgotPasswordState extends State<ForgotPassword> {
 
   validate() {
     if (formKey.currentState != null) {
-      if (formKey.currentState!.validate()) {
+      if (formKey.currentState.validate()) {
         // ignore: avoid_print
 
         print('Validated');
@@ -161,7 +161,7 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                         padding: EdgeInsets.only(top:mediaQueryWidth * 0.6),
                         child: ElevatedButton(
                           onPressed: () {
-                            if (!formKey.currentState!.validate()==false ){
+                            if (!formKey.currentState.validate()==false ){
                               // return;
                             } else {
                               Navigator.pushNamed(context, 'ResetPasswordCheck');

@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
 class Filter{
-  late String name;
-  late Color color;
-  late Color textColor;
+   String name;
+   Color color;
+   Color textColor;
 
-  Filter ({required this.name, required this.color, required this.textColor});
+  Filter ({ this.name,  this.color,  this.textColor});
 }

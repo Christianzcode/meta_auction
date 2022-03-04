@@ -5,7 +5,7 @@ import 'package:meta_auction/Models/watch.dart';
 class SeeAll extends StatefulWidget {
   List<Watch> watch;
 
-  SeeAll({required this.watch});
+  SeeAll({ this.watch});
 
   @override
   _SeeAllState createState() => _SeeAllState();

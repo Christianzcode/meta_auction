@@ -1,80 +1,66 @@
 import 'package:flutter/material.dart';
 import 'package:meta_auction/Models/filter.dart';
 
-late List<Filter> filter1 = [
+ List<Filter> filter1 = [
   Filter(
       name: 'All Watches',
-      color: Color.fromRGBO(112, 112, 112, 0.1),
+      color: Color.fromRGBO(112, 112, 112, 0.2),
       textColor: Colors.black),
   Filter(
       name: 'Boutique',
-      color: Color.fromRGBO(112, 112, 112, 0.1),
+      color: Color.fromRGBO(112, 112, 112, 0.2),
       textColor: Colors.black),
   Filter(
       name: 'Metal',
-      color: Color.fromRGBO(112, 112, 112, 0.1),
+      color: Color.fromRGBO(112, 112, 112, 0.2),
       textColor: Colors.black),
   Filter(
       name: 'Brand',
-      color: Color.fromRGBO(112, 112, 112, 0.1),
+      color: Color.fromRGBO(112, 112, 112, 0.2),
       textColor: Colors.black),
   Filter(
       name: 'Braclet',
-      color: Color.fromRGBO(112, 112, 112, 0.1),
+      color: Color.fromRGBO(112, 112, 112, 0.2),
       textColor: Colors.black),
   Filter(
       name: 'Classic',
-      color: Color.fromRGBO(112, 112, 112, 0.1),
+      color: Color.fromRGBO(112, 112, 112, 0.2),
       textColor: Colors.black),
   Filter(
       name: 'Expensive',
-      color: Color.fromRGBO(112, 112, 112, 0.1),
+      color: Color.fromRGBO(112, 112, 112, 0.2),
       textColor: Colors.black),
   Filter(
-      name: 'Price',
-      color: Color.fromRGBO(112, 112, 112, 0.1),
-      textColor: Colors.black),
-  Filter(
-      name: 'Price',
-      color: Color.fromRGBO(112, 112, 112, 0.1),
+      name: 'Collection',
+      color: Color.fromRGBO(112, 112, 112, 0.2),
       textColor: Colors.black),
 ];
 
-late List<Filter> filter2 = [
+ List<Filter> filter2 = [
   Filter(
-      name: 'All Watches',
-      color: Color.fromRGBO(112, 112, 112, 0.1),
+      name: 'Price',
+      color: Color.fromRGBO(112, 112, 112, 0.2),
       textColor: Colors.black),
   Filter(
-      name: 'Boutique',
-      color: Color.fromRGBO(112, 112, 112, 0.1),
+      name: 'Popularity',
+      color: Color.fromRGBO(112, 112, 112, 0.2),
       textColor: Colors.black),
   Filter(
-      name: 'Metal',
-      color: Color.fromRGBO(112, 112, 112, 0.1),
+      name: 'Rating',
+      color: Color.fromRGBO(112, 112, 112, 0.2),
       textColor: Colors.black),
   Filter(
-      name: 'Brand',
-      color: Color.fromRGBO(112, 112, 112, 0.1),
-      textColor: Colors.black),
-  Filter(
-      name: 'Braclet',
-      color: Color.fromRGBO(112, 112, 112, 0.1),
-      textColor: Colors.black),
-  Filter(
-      name: 'Classic',
-      color: Color.fromRGBO(112, 112, 112, 0.1),
+      name: 'Top Selling',
+      color: Color.fromRGBO(112, 112, 112, 0.2),
       textColor: Colors.black),
   Filter(
       name: 'Expensive',
-      color: Color.fromRGBO(112, 112, 112, 0.1),
+      color: Color.fromRGBO(112, 112, 112, 0.2),
       textColor: Colors.black),
   Filter(
-      name: 'Price',
-      color: Color.fromRGBO(112, 112, 112, 0.1),
-      textColor: Colors.black),
-  Filter(
-      name: 'Price',
-      color: Color.fromRGBO(112, 112, 112, 0.1),
+      name: 'Polished',
+      color: Color.fromRGBO(112, 112, 112, 0.2),
       textColor: Colors.black),
 ];
+
+ List<Filter> chosens = [];

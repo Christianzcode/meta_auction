@@ -1,32 +1,32 @@
 class Watch {
-  late String name;
-  late String brand;
-  late int year;
-  late String condition;
-  late String dialColor;
-  late String metal;
-  late String status;
-  late String lastBid;
-  late String country;
-  late DateTime date;
-  late String image;
-  late bool favorite;
-  late bool topSelling;
-  late bool auctioned;
+   String name;
+   String brand;
+   int year;
+   String condition;
+   String dialColor;
+   String metal;
+   String status;
+   String lastBid;
+   String country;
+   DateTime date;
+   String image;
+   bool favorite;
+   bool topSelling;
+   bool auctioned;
   Watch(
-      {required this.name,
-        required this.brand,
-        required this.year,
-        required this.condition,
-        required this.dialColor,
-        required this.metal,
-        required this.status,
-        required this.lastBid,
-        required this.country,
-        required this.date,
-        required this.image,
-        required this.favorite,
-        required this.topSelling,
-        required this.auctioned
+      {this.name,
+        this.brand,
+         this.year,
+         this.condition,
+         this.dialColor,
+         this.metal,
+         this.status,
+         this.lastBid,
+         this.country,
+         this.date,
+         this.image,
+         this.favorite,
+         this.topSelling,
+         this.auctioned
         });
 }

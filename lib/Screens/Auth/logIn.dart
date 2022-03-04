@@ -9,11 +9,11 @@ class LogIn extends StatefulWidget {
 
 class _LogInState extends State<LogIn> {
   GlobalKey<FormState> formkey = GlobalKey<FormState>();
-  String? password = '', confirmPassword = '', email = '';
+  String password = '', confirmPassword = '', email = '';
 
   bool validate() {
     if (formkey.currentState != null) {
-      if (formkey.currentState!.validate()) {
+      if (formkey.currentState.validate()) {
         if (password == confirmPassword) {
           // ignore: avoid_print
 
@@ -29,7 +29,7 @@ class _LogInState extends State<LogIn> {
     return false;
   }
 
-  String? validatePass(value) {
+  String validatePass(value) {
     if (value.trim().isEmpty) {
       return "This field is required";
     }
@@ -159,7 +159,7 @@ class _LogInState extends State<LogIn> {
                     ),
                     child: ElevatedButton(
                       onPressed: () {
-                        if (formkey.currentState!.validate() == false) {
+                        if (formkey.currentState.validate() == false) {
                           // ignore: avoid_print
                           print('Not Validated');
                           // reset!=null?

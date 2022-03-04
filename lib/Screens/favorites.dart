@@ -4,7 +4,7 @@ import '../Helpers/watch_fake.dart';
 import '../Models/watch.dart';
 
 class Favorites extends StatefulWidget {
-  const Favorites({Key? key}) : super(key: key);
+  const Favorites();
 
   @override
   _FavoritesState createState() => _FavoritesState();

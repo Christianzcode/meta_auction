@@ -20,7 +20,7 @@ class _ChangePasswordState extends State<ChangePassword> {
         print("passwords don't match");
         // return false;
       }
-      if (_formKey.currentState!.validate()) {
+      if (_formKey.currentState.validate()) {
         // ignore: avoid_print
 
         print('Validated');
@@ -140,7 +140,7 @@ class _ChangePasswordState extends State<ChangePassword> {
                                style: TextStyle(fontSize: 16, color: Colors.black38),
                              ),
                             ),
-                            validator: (String? value) {
+                            validator: (String value) {
                               if (value != null) {
                                 return 'Please re-enter password';
                               }

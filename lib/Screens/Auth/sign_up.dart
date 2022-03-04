@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:meta_auction/Screens/home_page.dart';
 
 class SignUp extends StatefulWidget {
-  const SignUp({Key? key}) : super(key: key);
+  const SignUp();
 
   @override
   _SignUpState createState() => _SignUpState();

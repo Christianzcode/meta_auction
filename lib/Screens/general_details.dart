@@ -8,7 +8,7 @@ import 'package:meta_auction/Widgets/details.dart';
 
 class GeneralDetails extends StatefulWidget {
   final Watch watch;
-  GeneralDetails({required this.watch});
+  GeneralDetails({ this.watch});
 
 
 

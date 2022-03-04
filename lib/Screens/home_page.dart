@@ -170,7 +170,7 @@ class _HomePageState extends State<HomePage> {
                   padding: EdgeInsets.all(10),
                   child: ListView.builder(
                     scrollDirection: Axis.horizontal,
-                      itemCount:filter1.length,
+                      itemCount:chosens.length,
                       itemBuilder: (context, index){
                     return Padding(
                       padding: EdgeInsets.only(right: mediaQueryWidth*0.05),
@@ -179,7 +179,7 @@ class _HomePageState extends State<HomePage> {
                           Navigator.pushNamed(context, 'SeeAll');
                         },
                         child: Text(
-                          filter1[index].name,
+                          chosens[index].name,
                           style: TextStyle(
                             color: Theme.of(context).primaryColor,
                           ),

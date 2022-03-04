@@ -6,7 +6,7 @@ import 'package:meta_auction/Models/watch.dart';
 class Details extends StatelessWidget {
   final Watch watch;
 
-  Details({required this.watch});
+  Details({ this.watch});
 
   @override
   Widget build(BuildContext context) {
