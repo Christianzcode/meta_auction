@@ -1,3 +1,4 @@
+import 'package:fl_chart/fl_chart.dart';
 import 'package:intl/intl.dart';
 import 'package:meta_auction/Models/watch.dart';
 
@@ -244,4 +245,35 @@ List<Watch> wat = [
         topSelling: false,
         auctioned: true,
     ),
+];
+
+List<FlSpot> weekLists = [
+    FlSpot(0, 1),
+    FlSpot(1, 1.5),
+    FlSpot(2, 1),
+    FlSpot(3, 3.4),
+    FlSpot(4, 2),
+    FlSpot(5, 2.2),
+    FlSpot(6, 1),
+];
+
+List<FlSpot> monthLists = [
+    FlSpot(0, 1),
+    FlSpot(1, 1.5),
+    FlSpot(2, 1),
+    FlSpot(3, 3.4),
+    FlSpot(4, 2),
+    FlSpot(5, 2.2),
+    FlSpot(6, 1),
+    FlSpot(7, 1.5),
+    FlSpot(8, 1),
+    FlSpot(9, 3.4),
+    FlSpot(10, 2),
+    FlSpot(11, 2.2),
+];
+
+List<FlSpot> yearLists = [
+    FlSpot(0, 1),
+    FlSpot(1, 1.5),
+    FlSpot(2, 0.5),
 ];

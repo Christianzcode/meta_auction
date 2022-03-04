@@ -263,7 +263,9 @@ class _SettingsState extends State<Settings> {
                         top: mediaQueryHeight * 0.02,
                       ),
                       child: ElevatedButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.pop(context);
+                        },
                         // child: AnimatedTextKit(
                         //   animatedTexts: [
                         //     for (final txt in _ktext)

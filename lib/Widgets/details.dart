@@ -10,8 +10,6 @@ class Details extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    List w = wat;
-    int index = 0;
     var mediaQueryHeight = MediaQuery.of(context).size.height;
     var mediaQueryWidth = MediaQuery.of(context).size.width;
     return Container(
@@ -47,7 +45,7 @@ class Details extends StatelessWidget {
                       "Brand",
                       style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15),
                     ),
-                    Text(w[index].brand,
+                    Text(watch.brand,
                         style: const TextStyle(
                           color: Colors.black45,
                         )),
@@ -79,7 +77,7 @@ class Details extends StatelessWidget {
                       "Year",
                       style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15),
                     ),
-                    Text('${w[index].year}',
+                    Text('${watch.year}',
                         style: const TextStyle(
                           color: Colors.black45,
                         )),
@@ -108,7 +106,7 @@ class Details extends StatelessWidget {
                       "Condition",
                       style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15),
                     ),
-                    Text(w[index].condition,
+                    Text(watch.condition,
                         style: const TextStyle(
                           color: Colors.black45,
                         )),
@@ -139,7 +137,7 @@ class Details extends StatelessWidget {
                       "Dial Color",
                       style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15),
                     ),
-                    Text(w[index].dialColor,
+                    Text(watch.dialColor,
                         style: const TextStyle(
                           color: Colors.black45,
                         )),
@@ -169,7 +167,7 @@ class Details extends StatelessWidget {
                       "Metal",
                       style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15),
                     ),
-                    Text(w[index].metal,
+                    Text(watch.metal,
                         style: const TextStyle(
                           color: Colors.black45,
                         )),
@@ -199,7 +197,7 @@ class Details extends StatelessWidget {
                       "Status",
                       style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15),
                     ),
-                    Text(w[index].status,
+                    Text(watch.status,
                         style: const TextStyle(
                           color: Colors.black45,
                         )),
@@ -229,7 +227,7 @@ class Details extends StatelessWidget {
                       "Last Bid",
                       style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15),
                     ),
-                    Text(w[index].lastBid,
+                    Text(watch.lastBid,
                         style: const TextStyle(
                           color: Colors.black45,
                         )),
@@ -259,7 +257,7 @@ class Details extends StatelessWidget {
                       "Country",
                       style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15),
                     ),
-                    Text(w[index].country,
+                    Text(watch.country,
                         style: const TextStyle(
                           color: Colors.black45,
                         )),
@@ -283,7 +281,7 @@ class Details extends StatelessWidget {
                       "Date",
                       style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15),
                     ),
-                    Text('${w[index].date}',
+                    Text('${watch.date}',
                         style: const TextStyle(
                           color: Colors.black45,
                         )),
@@ -293,7 +291,9 @@ class Details extends StatelessWidget {
           Padding(
             padding: EdgeInsets.only(top: mediaQueryHeight * 0.1),
             child: ElevatedButton(
-              onPressed: () {},
+              onPressed: () {
+                watch.favorite=true;
+              },
               child: const Text(
                 'Add To Favorites',
                 style: TextStyle(

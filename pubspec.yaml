@@ -34,6 +34,8 @@ dependencies:
   intl:
   roundcheckbox: ^2.0.4+1
   animated_text_kit: ^4.2.1
+  fl_chart:
+  syncfusion_flutter_charts:
 
 
 
