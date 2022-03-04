@@ -28,7 +28,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primaryColor:const Color.fromRGBO(91, 63, 112, 1),
       ),
-      initialRoute: 'SplashScreen',
+      initialRoute: 'HomePage',
       routes: {
         'SplashScreen': (context) =>  SplashScreen(),
         'LogIn': (context) =>  LogIn(),

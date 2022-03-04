@@ -34,6 +34,7 @@ class _FilterAndSortState extends State<FilterAndSort> {
         backgroundColor: Colors.white,
         resizeToAvoidBottomInset: false,
         appBar: AppBar(
+          centerTitle: true,
           automaticallyImplyLeading: false,
           backgroundColor: Theme.of(context).primaryColor,
           title: Text(

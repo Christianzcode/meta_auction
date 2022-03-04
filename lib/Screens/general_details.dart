@@ -29,6 +29,7 @@ class GeneralDetailsState extends State<GeneralDetails> {
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
+          centerTitle: true,
           leading: IconButton(
             icon: Icon(Icons.arrow_back),
             onPressed: () {
@@ -36,12 +37,9 @@ class GeneralDetailsState extends State<GeneralDetails> {
             },
           ),
           backgroundColor:Theme.of(context).primaryColor,
-          title:Container(
-            alignment: Alignment.center,
-            child: const  Text('DETAILS',
+          title:const  Text('DETAILS',
         style: TextStyle(fontSize: 20, fontFamily: 'Roboto-Regular',)
-        ),
-          ),),
+        ),),
 
         body: ColoredBox(
           color: Colors.white,

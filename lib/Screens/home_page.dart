@@ -4,6 +4,8 @@ import 'package:meta_auction/Models/watch.dart';
 import 'package:meta_auction/Screens/general_details.dart';
 import 'package:meta_auction/Screens/see_all.dart';
 import '../Helpers/watch_fake.dart';
+import 'package:meta_auction/Helpers/filter_fake.dart';
+
 
 class HomePage extends StatefulWidget {
   @override
@@ -162,51 +164,64 @@ class _HomePageState extends State<HomePage> {
                   icon:
                       const ImageIcon(AssetImage('assets/images/Symbols.png')),
                 ),
-                ElevatedButton(
-                  onPressed: () {
-                    Navigator.pushNamed(context, 'SeeAll');
-                  },
-                  child: Text(
-                    'All Watches',
-                    style: TextStyle(
-                      color: Theme.of(context).primaryColor,
-                    ),
-                  ),
-                  style: ElevatedButton.styleFrom(
-                    elevation: 3,
-                    primary: Colors.white,
-                    shape: RoundedRectangleBorder(
-                      side: BorderSide(
-                        color: Theme.of(context).primaryColor,
-                      ),
-                      borderRadius: BorderRadius.circular(20.0),
-                    ),
-                  ),
-                ),
-                Padding(
-                  padding: EdgeInsets.only(
-                    left: mediaQueryWidth * 0.02,
-                  ),
-                  child: ElevatedButton(
-                    onPressed: () {},
-                    child: Text(
-                      'Top Selling',
-                      style: TextStyle(
-                        color: Theme.of(context).primaryColor,
-                      ),
-                    ),
-                    style: ElevatedButton.styleFrom(
-                      elevation: 3,
-                      primary: Colors.white,
-                      shape: RoundedRectangleBorder(
-                        side: BorderSide(
-                          color: Theme.of(context).primaryColor,
+                Container(
+                  height: mediaQueryHeight*0.07,
+                  width: mediaQueryWidth*0.65,
+                  padding: EdgeInsets.all(10),
+                  child: ListView.builder(
+                    scrollDirection: Axis.horizontal,
+                      itemCount:filter1.length,
+                      itemBuilder: (context, index){
+                    return Padding(
+                      padding: EdgeInsets.only(right: mediaQueryWidth*0.05),
+                      child: ElevatedButton(
+                        onPressed: () {
+                          Navigator.pushNamed(context, 'SeeAll');
+                        },
+                        child: Text(
+                          filter1[index].name,
+                          style: TextStyle(
+                            color: Theme.of(context).primaryColor,
+                          ),
                         ),
-                        borderRadius: BorderRadius.circular(20.0),
+                        style: ElevatedButton.styleFrom(
+                          elevation: 3,
+                          primary: Colors.white,
+                          shape: RoundedRectangleBorder(
+                            side: BorderSide(
+                              color: Theme.of(context).primaryColor,
+                            ),
+                            borderRadius: BorderRadius.circular(20.0),
+                          ),
+                        ),
                       ),
-                    ),
-                  ),
-                )
+                    );
+                  }),
+                ),
+                // Padding(
+                //   padding: EdgeInsets.only(
+                //     left: mediaQueryWidth * 0.02,
+                //   ),
+                //   child: ElevatedButton(
+                //     onPressed: () {},
+                //     child: Text(
+                //       'Top Selling',
+                //       style: TextStyle(
+                //         color: Theme.of(context).primaryColor,
+                //       ),
+                //     ),
+                //     style: ElevatedButton.styleFrom(
+                //       elevation: 3,
+                //       primary: Colors.white,
+                //       shape: RoundedRectangleBorder(
+                //         side: BorderSide(
+                //           color: Theme.of(context).primaryColor,
+                //         ),
+                //         borderRadius: BorderRadius.circular(20.0),
+                //       ),
+                //     ),
+                //   ),
+                // )
               ],
             ),
             Expanded(

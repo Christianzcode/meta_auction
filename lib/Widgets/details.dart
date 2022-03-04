@@ -14,138 +14,20 @@ class Details extends StatelessWidget {
     int index = 0;
     var mediaQueryHeight = MediaQuery.of(context).size.height;
     var mediaQueryWidth = MediaQuery.of(context).size.width;
-    return
-      Column(children: [
+    return Column(
+      children: [
         Container(
-          padding: EdgeInsets.only(top:mediaQueryHeight * 0.08),
+            //padding: EdgeInsets.only(top:mediaQueryHeight * 0.08),
             height: 36,
-            decoration: BoxDecoration(color: Colors.grey[300],
-              border:const Border(
-                top: BorderSide(
-                  width: 1.0,color:Colors.black26,
-                ),
-                bottom: BorderSide(color:Colors.black26,
-                  width: 1.0,
-                ),
-              ),
-            ),
-
-            //  margin: EdgeInsets.fromLTRB(0, 40, 0, 150),
-            child: Padding(
-              padding: EdgeInsets.symmetric(horizontal: mediaQueryWidth * 0.1),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  const Text("Brand",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 15),),
-                  Text(
-                    w[index].brand,style: const TextStyle(color:Colors.black45,)
-                  ),
-
-                ],
-              ),
-            )),
-        Container(
-            height: 36,
-            decoration: BoxDecoration(color: Colors.grey[300],
-              border:const Border(
-
-                bottom: BorderSide(color:Colors.black26,
-                  width: 1.0,
-                ),
-              ),
-            ),
-
-            //  margin: EdgeInsets.fromLTRB(0, 40, 0, 150),
-            child: Padding(
-              padding: EdgeInsets.symmetric(horizontal: mediaQueryWidth * 0.1),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  const Text("Year",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 15),),
-                  Text(
-                    '${w[index].year}',style: const TextStyle(color:Colors.black45,)
-                  ),
-
-                ],
-              ),
-            )),
-        Container(height: 36,
-            decoration: BoxDecoration(color: Colors.grey[300],
-              border:const Border(
-
-                bottom: BorderSide(color:Colors.black26,
-                  width: 1.0,
-                ),
-              ),
-            ),
-
-            //  margin: EdgeInsets.fromLTRB(0, 40, 0, 150),
-            child: Padding(
-              padding: EdgeInsets.symmetric(horizontal: mediaQueryWidth * 0.1),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                 const Text("Condition",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 15),),
-                  Text(
-                    w[index].condition,style: const TextStyle(color:Colors.black45,)
-                  ),
-
-                ],
-              ),
-            )),
-        Container(height:36,
-            decoration: BoxDecoration(color: Colors.grey[300],
-              border:const Border(
-
-                bottom: BorderSide(color:Colors.black26,
-                  width: 1.0,
-                ),
-              ),
-            ),
-
-            //  margin: EdgeInsets.fromLTRB(0, 40, 0, 150),
-            child: Padding(
-              padding: EdgeInsets.symmetric(horizontal: mediaQueryWidth * 0.1),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  const Text("Dial Color",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 15),),
-                  Text(
-                    w[index].dialColor,style: const TextStyle(color:Colors.black45,)
-                  ),
-
-                ],
-              ),
-            )),
-        Container(height: 36,
-            decoration: BoxDecoration(color: Colors.grey[300],
-              border:const Border(
-
-                bottom: BorderSide(color:Colors.black26,
-                  width: 1.0,
-                ),
-              ),
-            ),
-
-            //  margin: EdgeInsets.fromLTRB(0, 40, 0, 150),
-            child: Padding(
-              padding: EdgeInsets.symmetric(horizontal: mediaQueryWidth * 0.1),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  const Text("Metal",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 15),),
-                  Text(
-                    w[index].metal,style: const TextStyle(color:Colors.black45,)
-                  ),
-
-                ],
-              ),
-            )),
-        Container(height:36,
-            decoration: BoxDecoration(color: Colors.grey[300],
+            decoration: BoxDecoration(
+              color: Color.fromRGBO(232, 232, 232, 0.3),
               border: const Border(
-
-                bottom: BorderSide(color:Colors.black26,
+                top: BorderSide(
+                  width: 1.0,
+                  color: Colors.black26,
+                ),
+                bottom: BorderSide(
+                  color: Colors.black26,
                   width: 1.0,
                 ),
               ),
@@ -157,20 +39,24 @@ class Details extends StatelessWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  const Text("Status",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 15),),
-                  Text(
-                    w[index].status,style: const TextStyle(color:Colors.black45,)
+                  const Text(
+                    "Brand",
+                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15),
                   ),
-
+                  Text(w[index].brand,
+                      style: const TextStyle(
+                        color: Colors.black45,
+                      )),
                 ],
               ),
             )),
-        Container(height:36,
-            decoration:  BoxDecoration(color: Colors.grey[300],
-              border:const Border(
-
-
-                bottom: BorderSide(color:Colors.black26,
+        Container(
+            height: 36,
+            decoration: BoxDecoration(
+              color: Colors.grey[300],
+              border: const Border(
+                bottom: BorderSide(
+                  color: Colors.black26,
                   width: 1.0,
                 ),
               ),
@@ -182,19 +68,24 @@ class Details extends StatelessWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  const Text("Last Bid",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 15),),
-                  Text(
-                    w[index].lastBid,style: const TextStyle(color:Colors.black45,)
+                  const Text(
+                    "Year",
+                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15),
                   ),
-
+                  Text('${w[index].year}',
+                      style: const TextStyle(
+                        color: Colors.black45,
+                      )),
                 ],
               ),
             )),
-        Container(height:36,
-            decoration: BoxDecoration(color: Colors.grey[300],
-              border:const Border(
-
-                bottom: BorderSide(color:Colors.black26,
+        Container(
+            height: 36,
+            decoration: BoxDecoration(
+              color: Colors.grey[300],
+              border: const Border(
+                bottom: BorderSide(
+                  color: Colors.black26,
                   width: 1.0,
                 ),
               ),
@@ -206,19 +97,24 @@ class Details extends StatelessWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  const Text("Country",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 15),),
-                  Text(
-                    w[index].country,style: const TextStyle(color:Colors.black45,)
+                  const Text(
+                    "Condition",
+                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15),
                   ),
-
+                  Text(w[index].condition,
+                      style: const TextStyle(
+                        color: Colors.black45,
+                      )),
                 ],
               ),
             )),
-        Container(height:36,
-            decoration: BoxDecoration(color: Colors.grey[300],
-              border:const Border(
-
-                bottom: BorderSide(color:Colors.black26,
+        Container(
+            height: 36,
+            decoration: BoxDecoration(
+              color: Colors.grey[300],
+              border: const Border(
+                bottom: BorderSide(
+                  color: Colors.black26,
                   width: 1.0,
                 ),
               ),
@@ -230,20 +126,166 @@ class Details extends StatelessWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  const Text("Brand",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 15),),
-                  Text(
-                    '${w[index].date}',style: const TextStyle(color:Colors.black45,)                 ),
+                  const Text(
+                    "Dial Color",
+                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15),
+                  ),
+                  Text(w[index].dialColor,
+                      style: const TextStyle(
+                        color: Colors.black45,
+                      )),
+                ],
+              ),
+            )),
+        Container(
+            height: 36,
+            decoration: BoxDecoration(
+              color: Colors.grey[300],
+              border: const Border(
+                bottom: BorderSide(
+                  color: Colors.black26,
+                  width: 1.0,
+                ),
+              ),
+            ),
 
+            //  margin: EdgeInsets.fromLTRB(0, 40, 0, 150),
+            child: Padding(
+              padding: EdgeInsets.symmetric(horizontal: mediaQueryWidth * 0.1),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  const Text(
+                    "Metal",
+                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15),
+                  ),
+                  Text(w[index].metal,
+                      style: const TextStyle(
+                        color: Colors.black45,
+                      )),
+                ],
+              ),
+            )),
+        Container(
+            height: 36,
+            decoration: BoxDecoration(
+              color: Colors.grey[300],
+              border: const Border(
+                bottom: BorderSide(
+                  color: Colors.black26,
+                  width: 1.0,
+                ),
+              ),
+            ),
+
+            //  margin: EdgeInsets.fromLTRB(0, 40, 0, 150),
+            child: Padding(
+              padding: EdgeInsets.symmetric(horizontal: mediaQueryWidth * 0.1),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  const Text(
+                    "Status",
+                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15),
+                  ),
+                  Text(w[index].status,
+                      style: const TextStyle(
+                        color: Colors.black45,
+                      )),
+                ],
+              ),
+            )),
+        Container(
+            height: 36,
+            decoration: BoxDecoration(
+              color: Colors.grey[300],
+              border: const Border(
+                bottom: BorderSide(
+                  color: Colors.black26,
+                  width: 1.0,
+                ),
+              ),
+            ),
+
+            //  margin: EdgeInsets.fromLTRB(0, 40, 0, 150),
+            child: Padding(
+              padding: EdgeInsets.symmetric(horizontal: mediaQueryWidth * 0.1),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  const Text(
+                    "Last Bid",
+                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15),
+                  ),
+                  Text(w[index].lastBid,
+                      style: const TextStyle(
+                        color: Colors.black45,
+                      )),
+                ],
+              ),
+            )),
+        Container(
+            height: 36,
+            decoration: BoxDecoration(
+              color: Colors.grey[300],
+              border: const Border(
+                bottom: BorderSide(
+                  color: Colors.black26,
+                  width: 1.0,
+                ),
+              ),
+            ),
+
+            //  margin: EdgeInsets.fromLTRB(0, 40, 0, 150),
+            child: Padding(
+              padding: EdgeInsets.symmetric(horizontal: mediaQueryWidth * 0.1),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  const Text(
+                    "Country",
+                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15),
+                  ),
+                  Text(w[index].country,
+                      style: const TextStyle(
+                        color: Colors.black45,
+                      )),
+                ],
+              ),
+            )),
+        Container(
+            height: 36,
+            decoration: BoxDecoration(
+              color: Colors.grey[300],
+              border: const Border(
+                bottom: BorderSide(
+                  color: Colors.black26,
+                  width: 1.0,
+                ),
+              ),
+            ),
+
+            //  margin: EdgeInsets.fromLTRB(0, 40, 0, 150),
+            child: Padding(
+              padding: EdgeInsets.symmetric(horizontal: mediaQueryWidth * 0.1),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  const Text(
+                    "Brand",
+                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15),
+                  ),
+                  Text('${w[index].date}',
+                      style: const TextStyle(
+                        color: Colors.black45,
+                      )),
                 ],
               ),
             )),
         Padding(
-          padding:  EdgeInsets.only(top:mediaQueryHeight*0.1),
+          padding: EdgeInsets.only(top: mediaQueryHeight * 0.1),
           child: ElevatedButton(
-            onPressed: () {
-
-              },
-
+            onPressed: () {},
             child: const Text(
               'Add To Favorites',
               style: TextStyle(

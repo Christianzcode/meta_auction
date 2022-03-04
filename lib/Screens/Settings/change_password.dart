@@ -48,6 +48,7 @@ class _ChangePasswordState extends State<ChangePassword> {
         child: Scaffold(
           backgroundColor: Colors.white,
             appBar: AppBar(
+              centerTitle: true,
               title: const Text(
                 'SETTINGS',
                 textAlign: TextAlign.center,
