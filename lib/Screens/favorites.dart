@@ -22,6 +22,7 @@ class _FavoritesState extends State<Favorites> {
         backgroundColor: Colors.white,
         resizeToAvoidBottomInset: false,
         appBar: AppBar(
+          centerTitle: true,
           backgroundColor: Theme.of(context).primaryColor,
           title: Text(
             'FAVORITES',
@@ -31,34 +32,31 @@ class _FavoritesState extends State<Favorites> {
                 fontFamily: 'Roboto-Medium'),
           ),
         ),
-        body: Padding(
-          padding:  EdgeInsets.only(top: mediaQueryHeight*0.04),
-          child: GridView.builder(
-                itemCount: fav.length,
-                gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
-                  maxCrossAxisExtent: 200,
-                  childAspectRatio: 1,
-                  crossAxisSpacing: 20,
-                  mainAxisSpacing: 20,
-                ),
-                itemBuilder: (context, i) {
-                  return Column(children: [
-                    SizedBox(
-                      width: mediaQueryWidth * 0.4,
-                      height: mediaQueryHeight * 0.16,
-                      child: Image.asset(fav[i].image),
+        body: GridView.builder(
+              itemCount: fav.length,
+              gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
+                maxCrossAxisExtent: 200,
+                childAspectRatio: 1,
+                crossAxisSpacing: 20,
+                mainAxisSpacing: 20,
+              ),
+              itemBuilder: (context, i) {
+                return Column(children: [
+                  SizedBox(
+                    width: mediaQueryWidth * 0.4,
+                    height: mediaQueryHeight * 0.16,
+                    child: Image.asset(fav[i].image),
+                  ),
+                  Padding(
+                    padding: EdgeInsets.only(top: mediaQueryHeight * 0.005),
+                    child: Text(
+                      fav[i].name,
+                      style: TextStyle(
+                          fontSize: 14, fontFamily: 'Roboto-Regular'),
                     ),
-                    Padding(
-                      padding: EdgeInsets.only(top: mediaQueryHeight * 0.005),
-                      child: Text(
-                        fav[i].name,
-                        style: TextStyle(
-                            fontSize: 14, fontFamily: 'Roboto-Regular'),
-                      ),
-                    )
-                  ]);
-                }),
-        ),
+                  )
+                ]);
+              }),
 
             // Column(
             // mainAxisAlignment: MainAxisAlignment.center,

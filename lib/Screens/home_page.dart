@@ -7,7 +7,6 @@ import 'package:roundcheckbox/roundcheckbox.dart';
 import '../Helpers/watch_fake.dart';
 import 'package:meta_auction/Helpers/filter_fake.dart';
 
-
 class HomePage extends StatefulWidget {
   @override
   _HomePageState createState() => _HomePageState();
@@ -34,7 +33,11 @@ class _HomePageState extends State<HomePage> {
             },
           ),
           actions: [
-            IconButton(onPressed: () {}, icon: const Icon(Icons.search)),
+            IconButton(
+                onPressed: () {
+                  Navigator.pushNamed(context, 'Search');
+                },
+                icon: const Icon(Icons.search)),
             IconButton(
                 onPressed: () {
                   Navigator.pushNamed(context, 'Favorites');
@@ -47,7 +50,7 @@ class _HomePageState extends State<HomePage> {
             Padding(
               padding: EdgeInsets.only(top: mediaQueryHeight * 0.02),
               child: Container(
-                  height: mediaQueryHeight * 0.33,
+                  height: mediaQueryHeight * 0.4,
                   //padding: EdgeInsets.only(top:mediaQueryHeight * 0.02,),
                   // margin: EdgeInsets.fromLTRB(
                   //     0, mediaQueryHeight * 0.01, 0, mediaQueryHeight * 0.01),
@@ -70,11 +73,9 @@ class _HomePageState extends State<HomePage> {
                             ),
                             TextButton(
                                 onPressed: () {
-                                  Navigator.of(context).push(
-                                      MaterialPageRoute(
-                                          builder: (context) =>
-                                              SeeAll(
-                                                  watch: topSelling)));
+                                  Navigator.of(context).push(MaterialPageRoute(
+                                      builder: (context) =>
+                                          SeeAll(watch: topSelling)));
                                 },
                                 child: const Text(
                                   "See all >>",
@@ -85,7 +86,7 @@ class _HomePageState extends State<HomePage> {
                           ],
                         ),
                         Container(
-                          height: mediaQueryHeight * 0.25,
+                          height: mediaQueryHeight * 0.3,
                           child: ListView.builder(
                               scrollDirection: Axis.horizontal,
                               itemCount: topSelling.length,
@@ -168,38 +169,39 @@ class _HomePageState extends State<HomePage> {
                       const ImageIcon(AssetImage('assets/images/Symbols.png')),
                 ),
                 Container(
-                  height: mediaQueryHeight*0.07,
-                  width: mediaQueryWidth*0.65,
+                  height: mediaQueryHeight * 0.07,
+                  width: mediaQueryWidth * 0.6,
                   padding: EdgeInsets.all(10),
                   child: ListView.builder(
-                    scrollDirection: Axis.horizontal,
-                      itemCount:chosens.length,
-                      itemBuilder: (context, index){
-                    return Padding(
-                      padding: EdgeInsets.only(right: mediaQueryWidth*0.05),
-                      child: ElevatedButton(
-                        onPressed: () {
-                          Navigator.pushNamed(context, 'SeeAll');
-                        },
-                        child: Text(
-                          chosens[index].name,
-                          style: TextStyle(
-                            color: Theme.of(context).primaryColor,
-                          ),
-                        ),
-                        style: ElevatedButton.styleFrom(
-                          elevation: 3,
-                          primary: Colors.white,
-                          shape: RoundedRectangleBorder(
-                            side: BorderSide(
-                              color: Theme.of(context).primaryColor,
+                      scrollDirection: Axis.horizontal,
+                      itemCount: chosens.length,
+                      itemBuilder: (context, index) {
+                        return Padding(
+                          padding:
+                              EdgeInsets.only(right: mediaQueryWidth * 0.05),
+                          child: ElevatedButton(
+                            onPressed: () {
+                              Navigator.pushNamed(context, 'SeeAll');
+                            },
+                            child: Text(
+                              chosens[index].name,
+                              style: TextStyle(
+                                color: Theme.of(context).primaryColor,
+                              ),
                             ),
-                            borderRadius: BorderRadius.circular(20.0),
+                            style: ElevatedButton.styleFrom(
+                              elevation: 3,
+                              primary: Colors.white,
+                              shape: RoundedRectangleBorder(
+                                side: BorderSide(
+                                  color: Theme.of(context).primaryColor,
+                                ),
+                                borderRadius: BorderRadius.circular(20.0),
+                              ),
+                            ),
                           ),
-                        ),
-                      ),
-                    );
-                  }),
+                        );
+                      }),
                 ),
                 // Padding(
                 //   padding: EdgeInsets.only(
@@ -252,19 +254,22 @@ class _HomePageState extends State<HomePage> {
                                     color: Colors.red,
                                     size: 20,
                                   ),
-                            Text('  '+
-                              list[i].name +
-                                  ' ' +
-                                  list[i].metal +
-                                  ' ' +
-                                  list[i].dialColor +
-                                  ' color ' +
-                                  list[i].condition +
-                                  ' ${list[i].year}',
-                              style: TextStyle(
-                                  color: Colors.black,
-                                  fontFamily: 'Roboto',
-                                  fontSize: 15),
+                            Expanded(
+                              child: Text(
+                                '  ' +
+                                    list[i].name +
+                                    ' ' +
+                                    list[i].metal +
+                                    ' ' +
+                                    list[i].dialColor +
+                                    ' color ' +
+                                    list[i].condition +
+                                    ' ${list[i].year}',
+                                style: TextStyle(
+                                    color: Colors.black,
+                                    fontFamily: 'Roboto',
+                                    fontSize: 15),
+                              ),
                             ),
                           ],
                         ),
@@ -281,7 +286,7 @@ class _HomePageState extends State<HomePage> {
                         onPressed: () {
                           Navigator.of(context).push(MaterialPageRoute(
                               builder: (context) =>
-                                  GeneralDetails(watch: topSelling[i])));
+                                  GeneralDetails(watch: list[i])));
                         },
                         icon: Icon(Icons.more_vert)),
                   );
@@ -293,6 +298,7 @@ class _HomePageState extends State<HomePage> {
       ),
     );
   }
+
   void _onButtonPressed() {
     var mediaQueryHeight = MediaQuery.of(context).size.height;
     var mediaQueryWidth = MediaQuery.of(context).size.width;
@@ -300,7 +306,7 @@ class _HomePageState extends State<HomePage> {
     showModalBottomSheet(
         backgroundColor: Colors.white,
         elevation: 0,
-        shape: const RoundedRectangleBorder(
+        shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.vertical(
             top: Radius.circular(25),
           ),

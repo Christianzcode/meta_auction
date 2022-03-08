@@ -55,11 +55,11 @@ class _LogInState extends State<LogIn> {
     return SafeArea(
       child: Scaffold(
           appBar: AppBar(
-            title: const Center(
-              child: Text("LOG IN  ",
-                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
-                  textAlign: TextAlign.center),
-            ),
+            centerTitle: true,
+            automaticallyImplyLeading: false,
+            title: Text("LOG IN  ",
+                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+                textAlign: TextAlign.center),
             backgroundColor: Theme.of(context).primaryColor,
           ),
           backgroundColor: Colors.white,

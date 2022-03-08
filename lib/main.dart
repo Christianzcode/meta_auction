@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:meta_auction/Screens/Search.dart';
 import 'package:meta_auction/Screens/Settings/change_password.dart';
 import 'package:meta_auction/Screens/Settings/settings.dart';
 import 'package:meta_auction/Screens/Auth/forgot_pass.dart';
@@ -28,7 +29,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primaryColor:const Color.fromRGBO(91, 63, 112, 1),
       ),
-      initialRoute: 'HomePage',
+      initialRoute: 'SplashScreen',
       routes: {
         'SplashScreen': (context) =>  SplashScreen(),
         'LogIn': (context) =>  LogIn(),
@@ -41,6 +42,7 @@ class MyApp extends StatelessWidget {
         'ResetPasswordCheck': (context) =>  ResetPasswordCheck(),
         'Filter': (context) =>  FilterAndSort(),
         'Favorites': (context) =>  Favorites(),
+        'Search': (context) => Search(),
       },
     );
   }

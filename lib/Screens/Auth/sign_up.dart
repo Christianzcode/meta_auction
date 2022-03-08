@@ -16,12 +16,11 @@ class _SignUpState extends State<SignUp> {
     return SafeArea(
       child: Scaffold(
           appBar: AppBar(
-            toolbarHeight: mediaQueryHeight * 0.10,
-            title: const Center(
-              child: Text("REGISTER ",
-                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
-                  textAlign: TextAlign.center),
-            ),
+            automaticallyImplyLeading: false,
+            centerTitle: true,
+            title: Text("REGISTER ",
+                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+                textAlign: TextAlign.center),
             backgroundColor: Theme.of(context).primaryColor,
           ),
           backgroundColor: Colors.white,
@@ -39,8 +38,8 @@ class _SignUpState extends State<SignUp> {
                 ),
                 Padding(
                   padding: EdgeInsets.symmetric(
-                      horizontal: mediaQueryHeight * 0.05,
-                      vertical: mediaQueryWidth * 0.05),
+                      horizontal: mediaQueryWidth * 0.1,
+                      vertical: mediaQueryHeight * 0.02),
                   child: TextFormField(
                     decoration: const InputDecoration(
                       border: UnderlineInputBorder(),
@@ -59,8 +58,8 @@ class _SignUpState extends State<SignUp> {
                 ),
                 Padding(
                   padding: EdgeInsets.symmetric(
-                      horizontal: mediaQueryHeight * 0.05,
-                      vertical: mediaQueryWidth * 0.05),
+                      horizontal: mediaQueryWidth * 0.1,
+                      vertical: mediaQueryHeight * 0.02),
                   child: TextFormField(
                     decoration: const InputDecoration(
                       border: UnderlineInputBorder(),
@@ -79,8 +78,8 @@ class _SignUpState extends State<SignUp> {
                 ),
                 Padding(
                   padding: EdgeInsets.symmetric(
-                    horizontal: mediaQueryHeight * 0.05,
-                    vertical: mediaQueryWidth * 0.05,),
+                      horizontal: mediaQueryWidth * 0.1,
+                      vertical: mediaQueryHeight * 0.02),
                   child: TextFormField(
                     decoration: const InputDecoration(
                       border: UnderlineInputBorder(),
@@ -99,8 +98,8 @@ class _SignUpState extends State<SignUp> {
                 ),
                 Padding(
                   padding: EdgeInsets.symmetric(
-                      horizontal: mediaQueryHeight * 0.05,
-                      vertical: mediaQueryWidth * 0.05),
+                      horizontal: mediaQueryWidth * 0.1,
+                      vertical: mediaQueryHeight * 0.02),
                   child: TextFormField(
                     decoration: const InputDecoration(
                       border: UnderlineInputBorder(),
@@ -152,8 +151,9 @@ class _SignUpState extends State<SignUp> {
                     ),
                     TextButton(
                         onPressed: () {
-                          Navigator.pushNamed(context, 'LogIn');
-                        },
+                          Navigator.pop(context);
+                          },
+
                         child:  Text(
                           "SIGN IN",
                           style: TextStyle(

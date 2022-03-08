@@ -35,13 +35,13 @@ class _ChangePasswordState extends State<ChangePassword> {
 
   @override
   Widget build(BuildContext context) {
-    const _Donetext = ['Chose Well', 'Done !', 'Press Here ', 'Press Here '];
-    const _DonetextStyle = TextStyle(
-        color: Colors.white,
-        fontSize: 18,
-        fontWeight: FontWeight.bold,
-        fontFamily: 'Roboto-Medium');
-    final emailController = TextEditingController();
+    //const _Donetext = ['Chose Well', 'Done !', 'Press Here ', 'Press Here '];
+    // const _DonetextStyle = TextStyle(
+    //     color: Colors.white,
+    //     fontSize: 18,
+    //     fontWeight: FontWeight.bold,
+    //     fontFamily: 'Roboto-Medium');
+    //final emailController = TextEditingController();
     var mediaQueryHeight = MediaQuery.of(context).size.height;
     var mediaQueryWidth = MediaQuery.of(context).size.width;
     return SafeArea(
@@ -112,9 +112,9 @@ class _ChangePasswordState extends State<ChangePassword> {
                                 style: TextStyle(fontSize: 16, color: Colors.black38),
                               ),
                             ),
-                            validator: MultiValidator([
-                              RequiredValidator(errorText: 'Required *'),
-                            ]),
+                            // validator: MultiValidator([
+                            //   RequiredValidator(errorText: 'Required *'),
+                            // ]),
                             //     (String? value){
                             //   if (value != null){
                             //     return"Please enter password";
@@ -140,15 +140,15 @@ class _ChangePasswordState extends State<ChangePassword> {
                                style: TextStyle(fontSize: 16, color: Colors.black38),
                              ),
                             ),
-                            validator: (String value) {
-                              if (value != null) {
-                                return 'Please re-enter password';
-                              }
-                              if (_password.text != _confirmpassword.text) {
-                                return "Password Do not match";
-                              }
-                              return null;
-                            },
+                            // validator: (String value) {
+                            //   if (value == null) {
+                            //     return 'Please re-enter password';
+                            //   }
+                            //   if (_password != _confirmpassword) {
+                            //     return "Password Do not match";
+                            //   }
+                            //   return null;
+                            // },
                     ),
                   ),
                   ElevatedButton(
@@ -160,7 +160,10 @@ class _ChangePasswordState extends State<ChangePassword> {
                           fontWeight: FontWeight.bold,
                           fontFamily: 'Roboto-Medium'),
                     ),
-                    onPressed: validatePass,
+                    onPressed: (){
+                      Navigator.pop(context);
+                      },
+
                     // (){
                     //   if (_password.text != _oldpassword.text) {
                     //     print("passwords don't match");

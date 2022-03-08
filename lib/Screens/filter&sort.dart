@@ -89,7 +89,7 @@ class _FilterAndSortState extends State<FilterAndSort> {
                   ? Container(
                       color: const Color.fromRGBO(112, 112, 112, 0.1),
                       width: mediaQueryWidth,
-                      height: mediaQueryHeight * 0.2,
+                      //height: mediaQueryHeight * 0.2,
                       child: GridView.builder(
                         physics: const NeverScrollableScrollPhysics(),
                         shrinkWrap: true,
@@ -177,7 +177,7 @@ class _FilterAndSortState extends State<FilterAndSort> {
                   ? Container(
                       color: const Color.fromRGBO(112, 112, 112, 0.1),
                       width: mediaQueryWidth,
-                      height: mediaQueryHeight * 0.2,
+                     // height: mediaQueryHeight * 0.2,
                       child: GridView.builder(
                         physics: const NeverScrollableScrollPhysics(),
                         shrinkWrap: true,

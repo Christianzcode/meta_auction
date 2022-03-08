@@ -20,11 +20,13 @@ class _SplashScreenState extends State<SplashScreen> {
   Widget build(BuildContext context) {
     // var mediaQueryHeight = MediaQuery.of(context).size.height;
     // var mediaQueryWidth = MediaQuery.of(context).size.width;
-    return Scaffold(
-      backgroundColor: Colors.white,
-        body: Center(
-          child: Image.asset('assets/images/logo.png', ),
-        )
+    return SafeArea(
+      child: Scaffold(
+        backgroundColor: Colors.white,
+          body: Center(
+            child: Image.asset('assets/images/logo.png', ),
+          )
+      ),
     );
   }
 }

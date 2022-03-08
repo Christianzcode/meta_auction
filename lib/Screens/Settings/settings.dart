@@ -121,7 +121,7 @@ class _SettingsState extends State<Settings> {
                               ],
                             ),
                             actions: [
-                              Expanded(child: Padding(
+                              Padding(
                                 padding:  EdgeInsets.symmetric(horizontal:mediaQueryWidth*0.08),
                                 child: Row(
                                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -145,7 +145,7 @@ class _SettingsState extends State<Settings> {
                                     },
                                   ),
                                 ],),
-                              ))
+                              )
 
                             ],
                           )

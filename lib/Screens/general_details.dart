@@ -47,14 +47,14 @@ class GeneralDetailsState extends State<GeneralDetails> {
             length: 2,
             child: Column(children: [
               Padding(
-                padding:  EdgeInsets.only(top:MediaQuery.of(context).size.height * 0.03),
+                padding:  EdgeInsets.only(top:MediaQuery.of(context).size.height * 0.01),
                 child: Container(
                   decoration: const BoxDecoration(
                       border: Border(bottom: BorderSide(color: Colors.black12))),
                   height: (MediaQuery.of(context).size.height -
                       MediaQuery.of(context).padding.top -
                       MediaQuery.of(context).padding.bottom) *
-                      0.04,
+                      0.06,
 
                   child:  TabBar(
                     isScrollable: false,

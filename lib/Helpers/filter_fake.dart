@@ -2,10 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:meta_auction/Models/filter.dart';
 
  List<Filter> filter1 = [
-  Filter(
-      name: 'All Watches',
-      color: Color.fromRGBO(112, 112, 112, 0.2),
-      textColor: Colors.black),
+
   Filter(
       name: 'Boutique',
       color: Color.fromRGBO(112, 112, 112, 0.2),
@@ -47,10 +44,6 @@ import 'package:meta_auction/Models/filter.dart';
       textColor: Colors.black),
   Filter(
       name: 'Rating',
-      color: Color.fromRGBO(112, 112, 112, 0.2),
-      textColor: Colors.black),
-  Filter(
-      name: 'Top Selling',
       color: Color.fromRGBO(112, 112, 112, 0.2),
       textColor: Colors.black),
   Filter(

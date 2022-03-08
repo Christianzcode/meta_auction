@@ -39,7 +39,7 @@ class _AnalyticsState extends State<Analytics> {
       children: [
         Padding(
           padding: EdgeInsets.only(
-            top: mediaQueryHeight * 0.07,
+            top: mediaQueryHeight * 0.02,
           ),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.end,
@@ -99,7 +99,7 @@ class _AnalyticsState extends State<Analytics> {
           ),
         ),
         SizedBox(
-          height: mediaQueryHeight * 0.4,
+          height: mediaQueryHeight * 0.35,
           width: mediaQueryWidth * 0.9,
           child: LineChart(
             lineChart,
